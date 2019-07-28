@@ -75,21 +75,23 @@ endif
 set tabstop=4
 set shiftwidth=4
 set relativenumber
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-noremap Q <Nop>
+nmap <Up> <NOP>
+nmap <Down> <NOP>
+nmap <Left> <NOP>
+nmap <Right> <NOP>
+nmap Q <NOP>
 map <C-o> :NERDTreeToggle<CR>
 map <C-s> :Gwrite<CR>
 map <C-i> :Gstatus<CR>
 map <C-m> :Gcommit<CR>
 
+unmap <CR>
+
 " Split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-L> <C-W><C-L>
+nmap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
