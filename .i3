@@ -1,0 +1,163 @@
+# Should you change your keyboard layout some time, delete
+# this file and re-run i3-config-wizard(1).
+#
+
+# i3 config file (v4)
+
+set $mod Mod4
+
+# Font for window titles.
+font pango:monospace 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+i focus left
+bindsym Mod1+Tab focus right
+bindsym $mod+o focus right
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+oslash focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal/vertical orientation 
+bindsym $mod+h split h
+
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+x reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec i3-msg exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym oslash resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Bar and custom commands
+bar {
+        status_command i3status
+        tray_output primary
+	position top
+}
+###
+focus_follows_mouse no
+new_window pixel 4
+
+# System Keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% # Raise volume 
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% # Lower volume 
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # Mute volume
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # Raise brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # Lower brightness
+
+# Programs 
+bindsym $mod+c exec google-chrome --force-device-scale-factor=1.4 # Chrome
+bindsym $mod+Shift+c exec google-chrome --incognito --force-device-scale-factor=1.4 # Chrome Incognito
+bindsym $mod+s exec spotify --force-device-scale-factor=1.4 # Spotify
+bindsym $mod+t exec thunderbird
+
+# General
+#bindsym $mod+l exec i3lock -i /usr/share/backgrounds/mate/desktop/Ubuntu-Mate-Warm-no-logo.png # i3lock
+bindsym $mod+l exec i3lock -i /home/pab/Pictures/wallpapers/1551460167580.png
+bindsym $mod+Tab exec /div/touchpad.sh # Touchpad lock
+bindsym Print exec mate-screenshot # Screenshot (full screen)
+#bindsym Shift+Print exec mate-screenshot -a # Screenshot (area)
+
+exec --no-startup-id compton
+exec --no-startup-id nm-applet
+exec --no-startup-id volumeicon
+exec --no-startup-id dropbox start
+exec --no-startup-id xrandr --dpi 135
+exec_always --no-startup-id xset r rate 300
+exec_always feh --bg-scale Pictures/wallpapers/Risva5t.jpg
