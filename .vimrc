@@ -85,6 +85,7 @@ map <C-s> :Gwrite<CR>
 map <C-i> :Gstatus<CR>
 map <C-m> :Gcommit<CR>
 unmap <CR>
+unmap <Tab>
 
 
 " Split navigation
