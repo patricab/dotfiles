@@ -84,8 +84,8 @@ map <C-o> :NERDTreeToggle<CR>
 map <C-s> :Gwrite<CR>
 map <C-i> :Gstatus<CR>
 map <C-m> :Gcommit<CR>
-
 unmap <CR>
+
 
 " Split navigation
 nmap <C-J> <C-W><C-J>
