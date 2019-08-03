@@ -81,11 +81,11 @@ nmap <Left> <NOP>
 nmap <Right> <NOP>
 nmap Q <NOP>
 map <C-o> :NERDTreeToggle<CR>
-map <C-s> :Gwrite<CR>
 map <C-i> :Gstatus<CR>
 map <C-m> :Gcommit<CR>
-unmap <CR>
-unmap <Tab>
+"unmap <CR>
+"unmap <Tab>
+
 
 
 " Split navigation
