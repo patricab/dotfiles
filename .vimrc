@@ -81,10 +81,9 @@ nmap <Left> <NOP>
 nmap <Right> <NOP>
 nmap Q <NOP>
 map <C-o> :NERDTreeToggle<CR>
-map <C-i> :Gstatus<CR>
+map <C-i> :NERDTreeToggle %<CR>
+map <C-n> :Gstatus<CR>
 map <C-m> :Gcommit<CR>
-"unmap <CR>
-"unmap <Tab>
 
 
 
