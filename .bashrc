@@ -127,3 +127,5 @@ alias ltc='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
 alias gcn='google-chrome --incognito --force-device-scale-factor=1.4'
 alias cls='history -c && history -w; clear'
 alias ds='dirs -v' 
+
+export GOPATH=$HOME/go
