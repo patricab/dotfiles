@@ -25,6 +25,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'mhinz/vim-startify'
+Plugin 'jiangmiao/auto-pairs'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
