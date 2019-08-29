@@ -86,6 +86,8 @@ map <C-o> :NERDTreeToggle<CR>
 map <C-i> :NERDTreeToggle %<CR>
 map <C-n> :Gstatus<CR>
 map <C-m> :Gcommit<CR>
+nmap oo o<Esc>k
+nmap OO O<Esc>j
 
 
 
