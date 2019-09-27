@@ -27,6 +27,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mhinz/vim-startify'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'xolox/vim-session'
+Plugin 'xolox/vim-misc'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
