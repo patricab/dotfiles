@@ -90,7 +90,8 @@ map <C-n> :Gstatus<CR>
 map <C-m> :Gcommit<CR>
 nmap oo o<Esc>k
 nmap OO O<Esc>j
-
+nmap J <C-e>
+nmap K <C-y>
 
 
 " Split navigation
@@ -112,3 +113,4 @@ set splitright
 "" Airline
 let g:airline_theme='hybridline'
 let g:airline_solarized_bg='dark'
+let g:session_autosave = 'no'
