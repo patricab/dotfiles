@@ -117,6 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 #####
+PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] "
 alias popd='popd -n'
 alias term='i3-sensible-terminal'
 alias python='python3'
@@ -127,5 +128,8 @@ alias ltc='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
 alias gcn='google-chrome --incognito --force-device-scale-factor=1.4'
 alias cls='history -c && history -w; clear'
 alias ds='dirs -v' 
+alias gl='git ls-tree -r master --name-only'
 
+# Path
 export GOPATH=$HOME/go
+export PATH=$PATH:/home/pab/Documents/arduino-1.8.10/

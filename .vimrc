@@ -29,6 +29,8 @@ Plugin 'mhinz/vim-startify'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
+Plugin 'airblade/vim-gitgutter'
+"Plugin 'junegunn/fzf.vim'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -79,6 +81,7 @@ endif
 set tabstop=4
 set shiftwidth=4
 set relativenumber
+set nu rnu
 nmap <Up> <NOP>
 nmap <Down> <NOP>
 nmap <Left> <NOP>
