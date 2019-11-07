@@ -1,3 +1,4 @@
+# Keybindings
 unbind-key J
 unbind-key K
 unbind-key h
@@ -18,3 +19,7 @@ bind-key h next-feed
 bind-key l prev-feed
 bind-key ENTER open-in-browser
 bind-key o open
+
+
+# Options
+browser "w3m %u"
