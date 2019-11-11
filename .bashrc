@@ -133,3 +133,4 @@ alias gl='git ls-tree -r master --name-only'
 # Path
 export GOPATH=$HOME/go
 export PATH=$PATH:/home/pab/Documents/arduino-1.8.10/
+source /etc/bash_completion.d/git-prompt

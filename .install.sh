@@ -79,3 +79,4 @@ git clone https://github.com/jiangmiao/auto-pairs
 # Upgrade system and reboot
 sudo apt-get -y upgrade
 sudo reboot
+

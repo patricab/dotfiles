@@ -22,4 +22,7 @@ bind-key o open
 
 
 # Options
-browser "w3m %u"
+#browser "w3m %u"
+bookmark-cmd "~/.newsbeuter/bookmark.sh"
+auto-reload yes
+reload-time 10
