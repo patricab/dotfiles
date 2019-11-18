@@ -23,6 +23,7 @@ bind-key o open
 bind-key O open-in-browser
 bind-key H home
 bind-key L end
+bind-key m toggle-article-read
 
 
 #macro i set browser "w3m %u"; open-in-browser; set browser "lynx %u"
