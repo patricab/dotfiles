@@ -89,8 +89,9 @@ nmap <Right> <NOP>
 nmap Q <NOP>
 map <C-o> :NERDTreeToggle<CR>
 map <C-i> :NERDTreeToggle %<CR>
-map <C-n> :Gstatus<CR>
-map <C-m> :Gcommit<CR>
+nmap <C-b> :Gstatus<CR>
+nmap <C-n> :Gcommit<CR>
+nmap <C-m> :!git push<CR>
 nmap oo o<Esc>k
 nmap OO O<Esc>j
 nmap J <C-e>
