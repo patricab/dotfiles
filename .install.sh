@@ -2,8 +2,9 @@
 cd ~
 clear
 
-dropbox
-nordvpn
+# Dropbox
+# Nordvpn
+# Mailspring
 
 # Installing packages, updating system and creating directories
 sudo apt-get -y update
@@ -16,11 +17,11 @@ sudo apt-get -y install sonic-pi
 sudo apt-get -y install libreoffice
 sudo apt-get -y install vim
 sudo apt-get -y install vlc
-sudo apt-get -y install deluge
+#sudo apt-get -y install deluge
 sudo apt-get -y install python3
 sudo apt-get -y install dos2unix
 sudo apt-get -y install firefox
-sudo apt-get -y install freecad
+#sudo apt-get -y install freecad
 sudo apt-get -y install gimp
 sudo apt-get -y install alsa
 sudo apt-get -y install acpi

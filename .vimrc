@@ -1,13 +1,14 @@
+"" Paths and initial settings
+" Source paths
+source ~/.vim/tex_html.vim
 runtime! debian.vim
+set nocompatible
+filetype off
+let g:AutoPairsShortcutFastWrap = "<C-f>"
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
+" Plugins
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
@@ -23,9 +24,8 @@ Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
 Plugin 'airblade/vim-gitgutter'
 "Plugin 'junegunn/fzf.vim'
-call vundle#end()            " required
-
-filetype plugin indent on    " required
+call vundle#end()
+filetype plugin indent on
 "set compatible
 
 if has("syntax")
@@ -65,6 +65,8 @@ nmap <Right> <NOP>
 nmap Q <NOP>
 map <silent> <C-o> :NERDTreeToggle<CR>
 map <silent> <C-i> :NERDTreeToggle %<CR>
+map <s-q> :source $vrc<CR>
+nmap <s-w> :w!<CR>
 nmap <C-b> :Gstatus<CR>
 nmap <C-n> :Gcommit<CR>
 nmap <C-m> :!git push<CR>
@@ -82,7 +84,8 @@ nmap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-" Settings, plugins
+"""" Settings, plugins
+"
 "
 "" NERDTree
 " enable line numbers
@@ -94,3 +97,6 @@ set splitright
 let g:airline_theme='hybridline'
 let g:airline_solarized_bg='dark'
 let g:session_autosave = 'no'
+"
+""" CtrlP
+let g:ctrlp_show_hidden = 1
