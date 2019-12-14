@@ -6,7 +6,6 @@
 [core]
 	editor = vim
 [credential]
-	helper = cache --timeout=3600
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
 	ls = ls-tree -r HEAD --name-only
