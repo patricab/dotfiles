@@ -33,4 +33,4 @@ bookmark-cmd "~/.newsbeuter/bookmark.sh"
 bookmark-autopilot yes
 bookmark-interactive no
 auto-reload yes
-reload-time 10
+#reload-time 10

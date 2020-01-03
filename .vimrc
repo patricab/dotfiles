@@ -52,7 +52,25 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-" Custom Commands
+"""" Settings, plugins
+"
+"
+"" NERDTree
+" enable line numbers
+ let NERDTreeShowLineNumbers=1
+ " make sure relative line numbers are used
+ autocmd FileType nerdtree setlocal relativenumber
+ "
+"" Airline
+let g:airline_theme='hybridline'
+let g:airline_solarized_bg='dark'
+let g:session_autosave = 'no'
+"
+""" CtrlP
+let g:ctrlp_show_hidden = 1
+
+
+"" Mappings
 set tabstop=4
 set shiftwidth=4
 set relativenumber
@@ -73,9 +91,10 @@ nmap oo o<Esc>k
 nmap OO O<Esc>j
 nmap J <C-e>
 nmap K <C-y>
+vmap //  y/\V<c-r>"<cr>
 
 
-" Split navigation
+"" Split navigation
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-L> <C-W><C-L>
@@ -83,19 +102,3 @@ nmap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-"""" Settings, plugins
-"
-"
-"" NERDTree
-" enable line numbers
- let NERDTreeShowLineNumbers=1
- " make sure relative line numbers are used
- autocmd FileType nerdtree setlocal relativenumber
- "
-"" Airline
-let g:airline_theme='hybridline'
-let g:airline_solarized_bg='dark'
-let g:session_autosave = 'no'
-"
-""" CtrlP
-let g:ctrlp_show_hidden = 1
