@@ -16,3 +16,4 @@ http://www.zamiang.com/post/debugging-a-live-saturn-v	Debugging a Live Saturn V
 https://luaradio.io/new-to-sdr.html	Guide to Software Defined Radio		
 http://metamodular.com/Computing/modular-c.pdf	Modular C: Reusable and Maintainable Code Using the C Language (1994) [pdf]		
 https://orbitalindex.com/archive/2019-11-12-Issue-38/	Issue No. 38		
+https://cushychicken.github.io/bad-schematic-interviews/	Reviewing Bad Schematics as EE Interview Tactic		

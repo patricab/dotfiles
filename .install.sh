@@ -20,6 +20,7 @@ sudo apt-get -y install skypeforlinux
 sudo apt-get -y install slack-desktop
 sudo apt-get -y install libreoffice
 sudo apt-get -y install vim
+sudo apt-get -y install vim-gtk
 sudo apt-get -y install vlc
 sudo apt-get -y install python3
 sudo apt-get -y install dos2unix

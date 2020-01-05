@@ -22,6 +22,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'xolox/vim-misc'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'fidian/hexmode'
 "Plugin 'junegunn/fzf.vim'
 call vundle#end()
 filetype plugin indent on

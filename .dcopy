@@ -5,10 +5,10 @@ for i in A B C
 do
 	cd /mnt/usb/RECORDER/FOLDER_$i
 	case $i in
-	A) cp -n * ~/Dropbox/ntnu/fthingel/regtek/forelesninger/audio
+	A) cp -n * ~/Dropbox/ntnu/fthingel/mikro/forelesninger/audio
 		;;
-	B) cp -n * ~/Dropbox/ntnu/fthingel/statøk/forelesninger/audio
+	B) cp -n * ~/Dropbox/ntnu/fthingel/anvendt/forelesninger/audio
 		;;
-	C) cp -n * ~/Dropbox/ntnu/fthingel/elektro/forelesninger/audio
+	C) cp -n * ~/Dropbox/ntnu/fthingel/signal/forelesninger/audio
 	esac
 done
