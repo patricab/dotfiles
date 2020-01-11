@@ -64,6 +64,9 @@ sudo apt-get -y install git
 sudo mkdir /pentest
 cd /pentest
 
+# Config files
+ln -f .conf .config/i3/config # Adds hardlink between custom i3 config and i3/config
+
 # Installing se-toolkit
 sudo git clone https://github.com/trustedsec/social-engineer-toolkit.git
 cd social-engineer-toolkit/
