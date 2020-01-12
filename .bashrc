@@ -129,6 +129,7 @@ alias gcn='google-chrome --incognito --force-device-scale-factor=1.4'
 alias cls='history -c && history -w; clear'
 alias ds='dirs -v' 
 alias gl='git ls-tree -r master --name-only'
+alias spec='screenfetch'
 
 # Path
 export vrc=$HOME/.vimrc
