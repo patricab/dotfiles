@@ -2,10 +2,6 @@
 cd ~
 clear
 
-# Programs to install: (supplement)
-#
-# Dropbox
-
 # Installing packages, updating system and creating directories
 sudo apt-get -y update
 sudo apt-get -y install snapd
@@ -68,11 +64,6 @@ cd /pentest
 # Config files
 ln -f .conf .config/i3/config # Adds hardlink between custom i3 config and i3/config
 
-# Installing se-toolkit
-sudo git clone https://github.com/trustedsec/social-engineer-toolkit.git
-cd social-engineer-toolkit/
-sudo python setup.py install
-
 # Vim plugins
 cd ~
 mkdir -p .vim/bundle
@@ -91,15 +82,18 @@ sudo apt -y install nordvpn-release_1.0.0_all.deb
 rm nordvpn-release_1.0.0_all.deb
 
 # Dropbox
-wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2019.02.14_amd64.deb
-sudo apt -y install dropbox_2019.02.14_amd64.deb
-rm dropbox_2019.02.14_amd64.deb
-
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf
+~/.dropbox-dist/dropboxd
 
 # Git setup
 git config --global core.editor vim
 git config --global user.name "patricab"
 git config --global user.email pigface.survey@gmail.com
+
+# Installing se-toolkit
+#sudo git clone https://github.com/trustedsec/social-engineer-toolkit.git
+#cd social-engineer-toolkit/
+#sudo python setup.py install
 
 # Upgrade system and reboot
 sudo apt-get -y upgrade
