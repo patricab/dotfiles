@@ -58,8 +58,6 @@ sudo apt-get -y install screenfetch
 #sudo apt-get -y install freecad
 #sudo apt-get -y install thunderbird
 #sudo apt-get -y install mupen64plus
-sudo mkdir /pentest
-cd /pentest
 
 # Config files
 ln -f .conf .config/i3/config # Adds hardlink between custom i3 config and i3/config
@@ -91,6 +89,8 @@ git config --global user.name "patricab"
 git config --global user.email pigface.survey@gmail.com
 
 # Installing se-toolkit
+#sudo mkdir /pentest
+#cd /pentest
 #sudo git clone https://github.com/trustedsec/social-engineer-toolkit.git
 #cd social-engineer-toolkit/
 #sudo python setup.py install
