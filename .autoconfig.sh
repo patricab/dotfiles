@@ -81,6 +81,9 @@ esac
 }
 
 function APT() {
+sudo apt-get -y install gcc-avr 
+sudo apt-get -y install avr-libc 
+sudo apt-get -y install avrdude
 sudo apt-get -y install snapd
 sudo apt-get -y install wine
 sudo apt-get -y install texlive
