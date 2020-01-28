@@ -83,6 +83,7 @@ nmap <Right> <NOP>
 nmap Q <NOP>
 map <silent> <C-o> :NERDTreeToggle<CR>
 map <silent> <C-i> :NERDTreeToggle %<CR>
+map <silent> <C-t> :term<CR>
 map <s-q> :source $vrc<CR>
 nmap <s-w> :w!<CR>
 nmap <C-b> :Gstatus<CR>

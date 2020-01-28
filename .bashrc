@@ -120,7 +120,7 @@ fi
 PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] "
 alias popd='popd -n'
 alias term='i3-sensible-terminal'
-alias python='python3'
+alias python='python3.7'
 alias update='sudo apt -y update --allow-unauthenticated; sudo apt -y upgrade --allow-unauthenticated;'
 alias activate='source env/bin/activate'
 alias gc='google-chrome --force-device-scale-factor=1.4'
@@ -136,3 +136,5 @@ export vrc=$HOME/.vimrc
 export GOPATH=$HOME/go
 export PATH=$PATH:/home/pab/Documents/arduino-1.8.10/
 source /etc/bash_completion.d/git-prompt
+
+#curl parrot.live
