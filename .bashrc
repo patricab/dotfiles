@@ -130,6 +130,9 @@ alias cls='history -c && history -w; clear'
 alias ds='dirs -v' 
 alias gl='git ls-tree -r master --name-only'
 alias spec='screenfetch'
+alias gps='git push'
+alias gp='git pull'
+alias gs='git status'
 
 # Path
 export vrc=$HOME/.vimrc
