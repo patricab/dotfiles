@@ -18,3 +18,4 @@ http://metamodular.com/Computing/modular-c.pdf	Modular C: Reusable and Maintaina
 https://orbitalindex.com/archive/2019-11-12-Issue-38/	Issue No. 38		
 https://cushychicken.github.io/bad-schematic-interviews/	Reviewing Bad Schematics as EE Interview Tactic		
 https://www.la1k.no/2020/01/08/flexradio-maestro-hacking-part-1-public-wifi-and-wallpapers/	Flexradio Maestro hacking part 1:  public WiFi, wallpapers and apps		
+https://www.la1k.no/2020/01/29/flexradio-maestro-hacking-part-2-revealing-the-backdoor/	Flexradio Maestro hacking part 2: Revealing the backdoor		
