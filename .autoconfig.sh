@@ -132,6 +132,7 @@ sudo apt-get -y install htop
 sudo apt-get -y install feh
 sudo apt-get -y install git
 sudo apt-get -y install screenfetch
+sudo apt-get -y install exuberant-ctags
 #sudo apt-get -y install nodejs
 #sudo apt-get -y install sonic-pi
 #sudo apt-get -y install deluge

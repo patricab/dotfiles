@@ -23,6 +23,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'xolox/vim-misc'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'fidian/hexmode'
+Plugin 'majutsushi/tagbar'
 "Plugin 'junegunn/fzf.vim'
 call vundle#end()
 filetype plugin indent on
@@ -90,6 +91,7 @@ nmap <C-b> :Gstatus<CR>
 nmap <C-n> :Gcommit<CR>
 nmap <C-m> :!git push<CR>
 nmap <C-x> :cd %:p:h <bar> source .*.vim<CR>
+nmap <C-y> :TagbarToggle<CR>
 nmap oo o<Esc>k
 nmap OO O<Esc>j
 nmap J <C-e>
