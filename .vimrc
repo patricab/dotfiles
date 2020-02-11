@@ -89,6 +89,7 @@ nmap <s-w> :w!<CR>
 nmap <C-b> :Gstatus<CR>
 nmap <C-n> :Gcommit<CR>
 nmap <C-m> :!git push<CR>
+nmap <C-x> :cd %:p:h <bar> source .*.vim<CR>
 nmap oo o<Esc>k
 nmap OO O<Esc>j
 nmap J <C-e>
