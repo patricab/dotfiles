@@ -13,7 +13,8 @@
 "	autocmd VimLeave *.tex !texclear %
 "
 
-map <leader><leader> <Esc>/<++><Enter>"0c4l
+"map <leader><leader> <Esc>/<++><Enter>"0c4l
+map <leader><leader> <Esc>/<++><Enter>"0C
 """LATEX
 	" Word count:
 "	autocmd FileType tex map <leader>w :w !detex \| wc -w<CR>

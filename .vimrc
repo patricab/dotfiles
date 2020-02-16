@@ -60,15 +60,15 @@ endif
 "" NERDTree
 " enable line numbers
  let NERDTreeShowLineNumbers=1
- " make sure relative line numbers are used
+"  make sure relative line numbers are used
  autocmd FileType nerdtree setlocal relativenumber
- "
+
 "" Airline
 let g:airline_theme='hybridline'
 let g:airline_solarized_bg='dark'
 let g:session_autosave = 'no'
-"
-""" CtrlP
+
+"" CtrlP
 let g:ctrlp_show_hidden = 1
 
 
@@ -78,15 +78,17 @@ set shiftwidth=4
 set relativenumber
 set nu rnu
 
+ 
 nmap Q <NOP>
 nmap <Up> <NOP>
 nmap <Down> <NOP>
 nmap <Left> <NOP>
 nmap <Right> <NOP>
-nmap oo o<Esc>k
-nmap OO O<Esc>j
+nmap oo o <Esc> k
+nmap OO O <Esc> j
 nmap J <C-e>
 nmap K <C-y>
+ 
 
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
@@ -104,6 +106,7 @@ map <s-q> :source $vrc<CR>
 map <silent> <C-t> :term<CR>
 map <silent> <C-o> :NERDTreeToggle<CR>
 map <silent> <C-i> :NERDTreeToggle %<CR>
+
 
 vmap //  y/\V<c-r>"<cr>
 
