@@ -102,7 +102,7 @@ nmap <C-m> :!git push<CR>
 nmap <C-x> :cd %:p:h <bar> source .*.vim<CR>
 "nmap <C-y> :TagbarToggle<CR>
 
-map <s-q> :source $vrc<CR>
+map Q :source $vrc<CR>
 map <silent> <C-t> :term<CR>
 map <silent> <C-o> :NERDTreeToggle<CR>
 map <silent> <C-i> :NERDTreeToggle %<CR>
