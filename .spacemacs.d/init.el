@@ -381,11 +381,12 @@ you should place your code here."
 ; Searched visual selection
 (define-key evil-normal-state-map (kbd "&") 'search-visual)
 
-; Save desktop file
-(define-key evil-normal-state-map (kbd "M-w") 'desktop-save)
+;; Changed to Spacemacs Layers (SPC-l)
+;; ; Save desktop file
+;; (define-key evil-normal-state-map (kbd "M-w") 'desktop-save)
 
-; Load desktop file
-(define-key evil-normal-state-map (kbd "M-q") 'desktop-change-dir)
+;; ; Load desktop file
+;; (define-key evil-normal-state-map (kbd "M-q") 'desktop-change-dir)
 
 )
 
