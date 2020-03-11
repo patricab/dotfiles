@@ -81,6 +81,12 @@ function MAIN() {
 }
 
 function APT() {
+    # Packages to install:
+    # google-chrome
+    # spotify
+    # matlab18b
+    # ltspice (wine)
+    # slack-desktop
     sudo apt-get -y install gcc-avr
     sudo apt-get -y install avr-libc
     sudo apt-get -y install avrdude
