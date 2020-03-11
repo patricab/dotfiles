@@ -85,15 +85,15 @@ function APT() {
     sudo apt-get -y install avr-libc
     sudo apt-get -y install avrdude
     sudo apt-get -y install snapd
-    sudo apt-get -y install wine
+    sudo apt-get -y install wine-stable
     sudo apt-get -y install texlive
     sudo apt-get -y install calibre
     sudo apt-get -y install arduino
     sudo apt-get -y install newsbeuter
     sudo apt-get -y install morse
     sudo apt-get -y install wireshark
-    sudo apt-get -y install skypeforlinux
-    sudo apt-get -y install slack-desktop
+    # sudo apt-get -y install skypeforlinux
+    #! sudo apt-get -y install slack-desktop
     sudo apt-get -y install libreoffice
     sudo apt-get -y install vim
     sudo apt-get -y install vlc
@@ -108,11 +108,11 @@ function APT() {
     sudo apt-get -y install nm-applet
     sudo apt-get -y install volumeicon
     sudo apt-get -y install xrandr
-    sudo apt-get -y install google-chrome
-    sudo apt-get -y install spotify
+    #! sudo apt-get -y install google-chrome
+    #! sudo apt-get -y install spotify
     sudo apt-get -y install nmap
-    sudo apt-get -y install john
-    sudo apt-get -y install gqrx
+    # sudo apt-get -y install john
+    sudo apt-get -y install gqrx-sdr
     sudo apt-get -y install tmux
     sudo apt-get -y install netcat
     sudo apt-get -y install httrack
