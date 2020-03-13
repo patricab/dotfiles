@@ -181,7 +181,7 @@ function EMACS() {
     # Emacs - Text editor
     cd ~
     sudo add-apt-repository ppa:kelleyk/emacs
-    sudo apt -y install emacs25
+    sudo apt -y install emacs26
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 }
 
