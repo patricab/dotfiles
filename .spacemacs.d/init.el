@@ -52,6 +52,7 @@ values."
      yaml
      ruby
      ranger
+     pdf-tools
      ;; spell-checking
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -319,6 +320,22 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (with-eval-after-load 'org
+    (setq-default org-default-notes-file "~/Dropbox/org/notes.org")
+    (setq org-refile-targets '((org-agenda-files :maxlevel . 3))))
+    (setq org-refile-allow-creating-parent-nodes 'confirm)
+    (setq org-agenda-text-search-extra-files '(agenda-archives))
+    (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
+    (setq org-enforce-todo-dependencies t)
+    (setq org-capture-templates
+    '(("t" "Task" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
+       "** TODO %?\n  %u")
+      ("a" "Article" entry (file+headline "~/Dropbox/org/notes.org" "Articles")
+       "** ART %?\n %u\n")
+      ("p" "Project" entry (file+headline "~/Dropbox/org/notes.org" "Projects")
+       "** PROJECT %?\n ")
+      )
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -328,9 +345,13 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/notes.org" "~/Dropbox/org/bach.org")))
+ '(org-todo-keywords (quote ((sequence "TODO" "DONE"))))
  '(package-selected-packages
    (quote
-    (auctex-latexmk flyspell-correct-helm flyspell-correct auto-dictionary ranger bundler rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby inf-ruby yaml-mode flycheck-pos-tip pos-tip flycheck elfeed-web elfeed-goodies ace-jump-mode simple-httpd elfeed-org noflet elfeed web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data powerline spinner hydra lv parent-mode projectile pkg-info epl flx highlight smartparens iedit anzu evil goto-chg undo-tree bind-map bind-key packed f dash s avy helm-core async popup yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic latex-preview-pane latexdiff helm org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib company-auctex biblio biblio-core auctex helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete vimrc-mode dactyl-mode smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit git-commit with-editor transient ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (bibtex-completion auctex-latexmk flyspell-correct-helm flyspell-correct auto-dictionary ranger bundler rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby inf-ruby yaml-mode flycheck-pos-tip pos-tip flycheck elfeed-web elfeed-goodies ace-jump-mode simple-httpd elfeed-org noflet elfeed web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data powerline spinner hydra lv parent-mode projectile pkg-info epl flx highlight smartparens iedit anzu evil goto-chg undo-tree bind-map bind-key packed f dash s avy helm-core async popup yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic latex-preview-pane latexdiff helm org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib company-auctex biblio biblio-core auctex helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete vimrc-mode dactyl-mode smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit git-commit with-editor transient ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -414,9 +435,13 @@ you should place your code here."
 ; Jump paragraph
 (define-key evil-normal-state-map (kbd "M-j") 'forward-paragraph)
 (define-key evil-normal-state-map (kbd "M-k") 'backward-paragraph)
+
+; Org refile
+(define-key evil-normal-state-map (kbd ", r") 'org-refile)
+(define-key evil-normal-state-map (kbd ", v") 'org-set-tags-command)
 )
 
-; Default formatting
+; Default formatting (LaTeX)
 (setq-default c-default-style "bsd")
 (setq-default c-basic-offset 3)
 (setq-default tab-width 3)
@@ -427,3 +452,8 @@ you should place your code here."
 )
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
+
+
+; Shortcut to notes (org file)
+(global-set-key (kbd "C-c n")
+(lambda () (interactive) (find-file "~/Dropbox/org/notes.org")))
