@@ -3,9 +3,6 @@
 ;; It must be stored in your home directory.
 
 (defun dotspacemacs/layers ()
-  "Configuration Layers declaration.
-You should not put any user code in this function besides modifying the variable
-values."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -52,7 +49,8 @@ values."
      yaml
      ruby
      ranger
-     pdf-tools
+     mu4e
+     ;; pdf-tools
      ;; spell-checking
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -65,7 +63,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(platformio-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -311,7 +309,7 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  )
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -351,7 +349,7 @@ you should place your code here."
  '(org-todo-keywords (quote ((sequence "TODO" "DONE"))))
  '(package-selected-packages
    (quote
-    (bibtex-completion auctex-latexmk flyspell-correct-helm flyspell-correct auto-dictionary ranger bundler rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby inf-ruby yaml-mode flycheck-pos-tip pos-tip flycheck elfeed-web elfeed-goodies ace-jump-mode simple-httpd elfeed-org noflet elfeed web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data powerline spinner hydra lv parent-mode projectile pkg-info epl flx highlight smartparens iedit anzu evil goto-chg undo-tree bind-map bind-key packed f dash s avy helm-core async popup yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic latex-preview-pane latexdiff helm org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib company-auctex biblio biblio-core auctex helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete vimrc-mode dactyl-mode smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit git-commit with-editor transient ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (platformio-mode mu4e-alert mu4e-maildirs-extension ht bibtex-completion auctex-latexmk flyspell-correct-helm flyspell-correct auto-dictionary ranger bundler rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby inf-ruby yaml-mode flycheck-pos-tip pos-tip flycheck elfeed-web elfeed-goodies ace-jump-mode simple-httpd elfeed-org noflet elfeed web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data powerline spinner hydra lv parent-mode projectile pkg-info epl flx highlight smartparens iedit anzu evil goto-chg undo-tree bind-map bind-key packed f dash s avy helm-core async popup yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic latex-preview-pane latexdiff helm org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib company-auctex biblio biblio-core auctex helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete vimrc-mode dactyl-mode smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit git-commit with-editor transient ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -413,7 +411,6 @@ you should place your code here."
 ;; (define-key evil-normal-state-map (kbd "M-w") 'desktop-save)
 ;; ; Load desktop file
 ;; (define-key evil-normal-state-map (kbd "M-q") 'desktop-change-dir)
-
 )
 
 (with-eval-after-load 'org
@@ -457,3 +454,13 @@ you should place your code here."
 ; Shortcut to notes (org file)
 (global-set-key (kbd "C-c n")
 (lambda () (interactive) (find-file "~/Dropbox/org/notes.org")))
+
+; Elfeed config
+(setq rmh-elfeed-org-files (list "~/.elfeed.org"))
+
+(with-eval-after-load 'elfeed-search
+  (defalias 'elfeed-toggle-star
+    (elfeed-expose #'elfeed-search-toggle-all 'star))
+  (define-key elfeed-search-mode-map (kbd "m") 'elfeed-toggle-star))
+
+(setq-default elfeed-search-filter "@1-months-ago +unread ")

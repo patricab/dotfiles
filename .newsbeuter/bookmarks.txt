@@ -25,3 +25,22 @@ https://www.reddit.com/r/hydro/comments/fbrg0o/here_is_my_latest_video_how_to_bu
 https://www.reddit.com/r/science/comments/fjyyil/scientists_can_now_edit_multiple_sites_in_the/	Scientists can now edit multiple sites in the genome at the same time to learn how different DNA stretches co-operate in health and disease. Dubbed %27CHyMErA%27, for Cas Hybrid for Multiplexed Editing and Screening Applications, the method can be applied to any type of mammalian cell.		
 https://hdl.handle.net/11250/2654612	Core‐shell nanofibers for developing self‐healing materials: Recent progress and future directions		
 https://forskning.no/landbruk-mat-nmbu-norges-miljo-og-biovitenskapelige-universitet/salatplanter-som-dyrkes-i-vann-taler-stress-darligere/1670620	Salatplanter som dyrkes i vann tåler stress dårligere		
+https://forskning.no/3d-printing-partner-sintef/skriver-i-3d-for-a-gi-oss-vaksiner-raskere/1686439	Skriver i 3D for å gi oss vaksiner raskere		
+https://forskning.no/alternativ-energi-klima-miljoteknologi/intelligente-droner-finner-feil-i-store-solcelleparker/1675678	Intelligente droner finner feil i store solcelleparker		
+https://forskning.no/energi-fornybar-energi-partner/oysamfunnet-senja-satser-pa-fornybar-energi/1678965	Øysamfunnet Senja satser på fornybar energi		
+https://forskning.no/energi-klima-luftfart/er-elfly-redningen-for-kortbanenettet/1676834	Er elfly redningen for kortbanenettet?		
+https://forskning.no/fysikk-materialteknologi-partner/doble-solceller-kan-oke-effektiviteten-med-50-prosent/1667008	Doble solceller kan øke effektiviteten med 50 prosent		
+https://forskning.no/fisk-ntnu-oppdrett/robotskilpadder-gjor-fisken-mindre-stresset/1659552	Robotskilpadder gjør fisken mindre stresset		
+https://forskning.no/forurensning-havet-miljoovervakning/undervannsrobot-skal-finne-forurensning-i-havet/1653445	Undervannsrobot skal finne forurensning i havet		
+https://forskning.no/biologi-bioteknologi-celler/her-er-den-forste-roboten-som-er-laget-av-levende-celler/1631306	Her er den første roboten som er laget av levende celler		
+https://forskning.no/landbruk/verdens-matproduksjon-er-avhengig-av-fosfor-er-vi-i-ferd-med-a-ga-tom/1655270	Verdens matproduksjon er avhengig av fosfor. Er vi i ferd med å gå tom?		
+https://forskning.no/romfart/50-ar-siden-apollo-13-ulykken-som-fikk-verden-til-a-holde-pusten/1670947	50 år siden Apollo 13-ulykken som fikk verden til å holde pusten		
+https://forskning.no/arktis-klima-norsk-polarinstitutt/polarforskere-kom-hjem-til-koronapandemi/1664213	Polarforskere kom hjem til koronapandemi		
+https://forskning.no/matematikk/far-abelprisen-for-a-bruke-tilfeldighet-til-a-utforske-matematikkens-hemmeligheter/1656816	Får Abelprisen for å bruke tilfeldighet til å utforske matematikkens hemmeligheter		
+https://forskning.no/niva-niva-norsk-institutt-for-vannforskning-partner/dna-analyse-oppklarer-alge-mysterium-pa-svalbard/1648809	DNA-analyse oppklarer alge-mysterium på Svalbard		
+https://forskning.no/celler-dna-kreft/fant-samtalen-som-finner-sted-i-menneskets-dna/1647840	Fant samtalen som finner sted i menneskets DNA		
+https://forskning.no/fisk-kreft-partner/fisken-som-hjelper-forskerne-a-forsta-menneskehjernen/1636134	Fisken som hjelper forskerne å forstå menneskehjernen		
+https://forskning.no/romfart/her-er-det-som-kreves-hvis-du-vil-at-nasa-skal-sende-deg-til-manen/1637797	Her er det som kreves hvis du vil at NASA skal sende deg til månen		
+https://forskning.no/fysikk/na-kan-vi-snart-fa-en-helt-ny-type-partikkelakselerator/1633345	Nå kan vi snart få en helt ny type partikkelakselerator		
+https://forskning.no/dna/forskere-har-oppdaget-et-nytt-lag-i-livets-genetiske-kode/1625500	Forskere har oppdaget et nytt lag i livets genetiske kode		
+https://forskning.no/biologi-klima-partner/fjellplantene-overlever-klimaendringer/1619265	Fjellplantene overlever klimaendringer		

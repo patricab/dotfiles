@@ -53,6 +53,7 @@ sudo apt-get -y install feh
 sudo apt-get -y install git
 sudo apt-get -y install screenfetch
 sudo apt-get -y install okular
+sudo apt-get -y install mu4e
 #sudo apt-get -y install nodejs
 #sudo apt-get -y install sonic-pi
 #sudo apt-get -y install deluge
@@ -87,7 +88,7 @@ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf
 # Git setup
 git config --global core.editor vim
 git config --global user.name "patricab"
-git config --global user.email pigface.survey@gmail.com
+git config --global user.email patric.berthelsen@gmail.com
 
 # Installing se-toolkit
 #sudo mkdir /pentest
