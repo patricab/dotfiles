@@ -11,7 +11,6 @@
 *** https://blogs.nasa.gov/stationreport/feed/
 *** https://www.nasa.gov/rss/dyn/onthestation_rss.rss
 *** https://orbitalindex.com/feed.xml
-*** https://xkcd.com/rss.xml
 ** Hacker News                                                           :hn:
 *** https://hnrss.org/frontpage
 ** Div                                                                  :div:
@@ -21,3 +20,4 @@
 *** https://blog.xkcd.com/feed/
 *** https://standardebooks.org/rss/new-releases
 *** https://patricab.github.io/feed.xml
+*** https://xkcd.com/rss.xml
