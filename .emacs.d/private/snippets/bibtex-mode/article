@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : article
+#key : article
+#contributor : Patric A. Berthelsen
+# --
+$0@article{$1,
+  author =       {$2},
+  title =        {$3},
+  journal =      {$4},
+  year =         {$5},
+}

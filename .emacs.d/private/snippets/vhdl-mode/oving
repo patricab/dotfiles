@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+#name : oving
+#key : ov
+#contributor : patricab
+# --
+--10M50DAF484C7G
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity oving$1 is
+  port (
+    $2 :in $3;
+    $4 :out $5);
+end oving$1;
+
+architecture arch of oving$1 is
+  component $6
+    port(
+      $7
+    );
+  end component;
+  --
+  signal $8 :$9;
+begin
+   $0;
+end arch;

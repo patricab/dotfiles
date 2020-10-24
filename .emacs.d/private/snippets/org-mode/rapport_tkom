@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+#name : rapport_tkom
+#key : rapport
+#contributor : Patric A. Berthelsen
+# --
+#+LATEX_HEADER: \documentclass[a4paper,11pt]{article}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+TITLE: Lab $1 - Trådløs Kommunikasjon
+#+AUTHOR: Patric A.B, Sigurd H.
+#+DATE: $2
+
+* $0

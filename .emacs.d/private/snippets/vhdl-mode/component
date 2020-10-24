@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+#name : component
+#key : comp
+#contributor : Patric A. Berthelsen
+# --
+component $1
+  port(
+    $2);
+$0end component;

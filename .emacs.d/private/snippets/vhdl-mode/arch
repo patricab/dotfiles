@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+#name : arch
+#key : arch
+#contributor : Patric A. Berthelsen
+# --
+architecture arch of $1 is
+$2
+begin
+$0
+end arch;
