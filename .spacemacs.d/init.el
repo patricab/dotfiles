@@ -3,9 +3,13 @@
 ;; It must be stored in your home directory.
 
 (defun dotspacemacs/layers ()
+  "Configuration Layers declaration.
+You should not put any user code in this function besides modifying the variable
+values."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
+   ;; or `spacemacs'. (default 'spacemacs)
    dotspacemacs-distribution 'spacemacs
    ;; Lazy installation of layers (i.e. layers are installed only when a file
    ;; with a supported type is opened). Possible values are `all', `unused'
@@ -27,11 +31,7 @@
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
+     pdf-tools
      csv
      html
      octave
@@ -50,23 +50,29 @@
      yaml
      ruby
      ranger
-     ;; mu4e
-     ;; pdf-tools
-     ;; pdf
-     ;; spell-checking
+     (mu4e :variables
+             mu4e-enable-async-operations t)
+     ;; better-defaults
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; better-defaults
+     ;; spell-checking
      ;; version-control
-     (latex :variables latex-build-command "LatexMk")
-     ;; (debug :variables debug-additional-debuggers '("gdb" "pdb"))
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(platformio-mode)
+   dotspacemacs-additional-packages '(evil-mu4e
+                                      treemacs
+                                      treemacs-evil
+                                      treemacs-projectile
+                                      sqlite3
+                                      (org-roam :location (recipe :fetcher github :repo "jethrokuan/org-roam"))
+                                      org-roam-bibtex
+                                      org-noter
+                                      platformio-mode
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -122,7 +128,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'random
+   dotspacemacs-startup-banner 'official
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -262,16 +268,15 @@ values."
    ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
    ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
    ;; This variable can also be set to a property list for finer control:
-   ;; '(:relative nil
-   ;;   :disabled-for-modes dired-mode
-   ;;                       doc-view-mode
-   ;;                       markdown-mode
-   ;;                       org-mode
-   ;;                       pdf-view-mode
-   ;;                       text-mode
-   ;;   :size-limit-kb 1000)
+   dotspacemacs-line-numbers '(:relative t
+                                :disabled-for-modes dired-mode
+                                                    doc-view-mode
+                                                    markdown-mode
+                                                    org-mode
+                                                    pdf-view-mode
+                                                    text-mode
+                                :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers 'relative
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -312,7 +317,9 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-)
+;  (add-hook 'pdf-view-mode-hook 'linum-on)
+;	(global-linum-mode 1)
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -331,37 +338,14 @@ you should place your code here."
     (setq org-capture-templates
     '(("t" "Task" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
        "** TODO %?\n  %u")
+      ("n" "Note" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
+       "** %?\n ")
       ("a" "Article" entry (file+headline "~/Dropbox/org/notes.org" "Articles")
        "** ART %?\n %u\n")
       ("p" "Project" entry (file+headline "~/Dropbox/org/notes.org" "Projects")
        "** PROJECT %?\n ")
       )
     ))
-  )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   (quote
-    ("~/Dropbox/org/notes.org" "~/Dropbox/org/bach.org")))
- '(org-todo-keywords (quote ((sequence "TODO" "DONE"))))
- '(package-selected-packages
-   (quote
-    (csv-mode magit-gh-pulls github-search github-clone gist gh marshal logito pcache github-browse-file selectric-mode loc-changes load-relative realgud platformio-mode mu4e-alert mu4e-maildirs-extension ht bibtex-completion auctex-latexmk flyspell-correct-helm flyspell-correct auto-dictionary ranger bundler rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby inf-ruby yaml-mode flycheck-pos-tip pos-tip flycheck elfeed-web elfeed-goodies ace-jump-mode simple-httpd elfeed-org noflet elfeed web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data powerline spinner hydra lv parent-mode projectile pkg-info epl flx highlight smartparens iedit anzu evil goto-chg undo-tree bind-map bind-key packed f dash s avy helm-core async popup yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode company-anaconda anaconda-mode pythonic latex-preview-pane latexdiff helm org-ref pdf-tools key-chord ivy tablist helm-bibtex parsebib company-auctex biblio biblio-core auctex helm-company helm-c-yasnippet fuzzy company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete vimrc-mode dactyl-mode smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup htmlize helm-gitignore gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md evil-magit magit git-commit with-editor transient ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump diminish define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-
-
 
 ; Keybind functions
 (fset 'evil-line-above
@@ -401,12 +385,12 @@ you should place your code here."
 (define-key evil-normal-state-map (kbd "W") 'save-buffer)
 
 ; Refresh buffer
-(define-key evil-normal-state-map (kbd "Q") 'eval-buffer)
+(define-key evil-normal-state-map (kbd "C-c b") 'dotspacemacs/sync-configuration-layers)
 
-; Neotree toggle
-;; (global-set-key (kbd "C-o") 'neotree-toggle)
+; Treemacs toggle
+;; (global-set-key (kbd "C-c o") 'treemacs)
 
-; Searched visual selection
+; Search visual selection
 (define-key evil-normal-state-map (kbd "&") 'search-visual)
 
 ;; Changed to Spacemacs Layers (SPC-l)
@@ -454,11 +438,9 @@ you should place your code here."
 (setq TeX-parse-self t)
 
 
-; Shortcut to notes (org file)
-(global-set-key (kbd "C-c n")
-(lambda () (interactive) (find-file "~/Dropbox/org/notes.org")))
-
 ; Elfeed config
+(require 'elfeed-org)
+(elfeed-org)
 (setq rmh-elfeed-org-files (list "~/.elfeed.org"))
 
 (with-eval-after-load 'elfeed-search
@@ -467,3 +449,218 @@ you should place your code here."
   (define-key elfeed-search-mode-map (kbd "m") 'elfeed-toggle-star))
 
 (setq-default elfeed-search-filter "@1-months-ago +unread ")
+
+; Bibtex config
+(setq org-ref-default-bibliography '("~/Dropbox/ntnu/bach/art.bib"))
+(setq org-ref-pdf-directory "~/Dropbox/ntnu/bach/pdf")
+;; org-ref-bibliography-notes "~/Dropbox/ntnu/bach/art.org"
+(setq bibtex-completion-bibliography
+  '("~/Dropbox/ntnu/bach/art.bib")
+  bibtex-completion-library-path '("~/Dropbox/ntnu/bach/pdf")
+  bibtex-completion-notes-path "/path/to/notes.org")
+
+; Org pomodoro
+(setq org-pomodoro-long-break-length 15) ; [Minutes]
+
+; Shortcut to notes (org file)
+(global-set-key (kbd "C-c n")
+(lambda () (interactive) (find-file "~/Dropbox/org/notes.org")))
+
+;; Mu4e config
+(require 'org-mu4e)
+(setq mu4e-maildir "~/.maildir")
+(setq mu4e-trash-folder "/Trash")
+(setq mu4e-refile-folder "/Archive")
+(setq mu4e-get-mail-command "mbsync -a")
+     ;; mu4e-update-interval 300)
+(setq mu4e-compose-signature-auto-include t)
+(setq mu4e-view-show-images t)
+(setq mu4e-view-show-addresses t)
+;; (setq mu4e-sent-messages-behavior 'delete)
+(setq mu4e-enable-async-operations t)
+(setq mu4e-enable-notifications t)
+(setq mu4e-enable-mode-line t)
+(setq mu4e-compose-complete-addresses t)
+
+
+; Contact info
+(setq
+ user-mail-address "patric.berthelsen@vkbb.no"
+ user-full-name  "Patric A. Berthelsen"
+ mu4e-compose-signature
+(concat
+  "Mvh, \n\n"
+  "Patric A. Berthelsen\n"
+  "patric.berthelsen@vkbb.no\n"
+  "patricab@stud.ntnu.no\n"
+  "+47 41176306\n"
+  "https://www.linkedin.com/in/patric-andre-berthelsen/"))
+
+; Mail directory shortcuts
+(setq mu4e-maildir-shortcuts
+      '(("/vkbb/INBOX" . ?j)
+       ("/ntnu/INBOX" . ?n)
+))
+
+; Custom contexts
+;; (setq mu4e-contexts
+;;   `( ,(make-mu4e-context
+;;     :name "vkbb"
+;;     :enter-func (lambda () (mu4e-message "Switch to the Private context"))
+;;     :match-func (lambda (msg)
+;;     (when msg
+;;       (mu4e-message-contact-field-matches msg
+;;         :to "patric.berthelsen@vkbb.no")))
+;;         :vars '((user-mail-address . "patric.berthelsen@vkbb.no"  )
+;;         (user-full-name . "Patric A. Berthelsen" )
+;;         (mu4e-compose-signature .
+;;         (concat
+;;           "Mvh, \n\n"
+;;           "Patric A. Berthelsen\n"
+;;           "patric.berthelsen@vkbb.no\n"
+;;           "+47 41176306\n"
+;;           "https://www.linkedin.com/in/patric-andre-berthelsen/"))))
+;;      ,(make-mu4e-context
+;;       :name "ntnu"
+;;       :enter-func (lambda () (mu4e-message "Switch to the Work context"))
+;;       :match-func (lambda (msg)
+;;       (when msg
+;;       (mu4e-message-contact-field-matches msg
+;;         :to "patricab@stud.ntnu.no")))
+;;         :vars '((user-mail-address . "patricab@stud.ntnu.no" )
+;;         (user-full-name . "Patric A. Berthelsen" )
+;;         (mu4e-compose-signature .
+;;         (concat
+;;           "Mvh, \n\n"
+;;           "Patric A. Berthelsen\n"
+;;           "patricab@stud.ntnu.no\n"
+;;           "+47 41176306\n"
+;;           "https://www.linkedin.com/in/patric-andre-berthelsen/")))))
+;; )
+
+; Context policy
+(setq mu4e-context-policy 'pick-first
+      mu4e-compose-context-policy nil)
+
+; Bookmarks
+(setq mu4e-bookmarks
+      `(("flag:unread AND NOT flag:trashed" "Unread messages" ?u)
+        ("date:today..now" "Today's messages" ?t)
+        ("date:7d..now" "Last 7 days" ?w)
+        ("mime:image/*" "Messages with images" ?p)
+        (,(mapconcat 'identity
+                     (mapcar
+                      (lambda (maildir)
+                        (concat "maildir:" (car maildir)))
+                      mu4e-maildir-shortcuts) " OR ")
+         "All inboxes" ?i)))
+
+; SMTP
+(require 'smtpmail)
+(setq message-send-mail-function 'smtpmail-send-it
+  smtpmail-starttls-credentials
+  '(("patric.berthelsen@vkbb.no" 587 nil nil))
+  smtpmail-default-smtp-server "smtp.altibox.no"
+  smtpmail-smtp-server "smtp.altibox.no"
+  smtpmail-smtp-service 587
+  smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
+  smtpmail-debug-info t
+)
+
+; Desktop notifications
+(with-eval-after-load 'mu4e-alert
+  (mu4e-alert-set-default-style 'notifications))
+
+; Contact autocompletion
+(setq mu4e-org-contacts-file  "~/.emacs.d/contacts")
+(add-to-list 'mu4e-headers-actions
+             '("org-contact-add" . mu4e-action-add-org-contact) t)
+(add-to-list 'mu4e-view-actions
+             '("org-contact-add" . mu4e-action-add-org-contact) t)
+
+
+;; Org-roam
+(use-package org-roam
+  :after org
+  :hook (org-mode . org-roam-mode)
+  :custom
+  (org-roam-directory "~/Dropbox/org/roam")
+  :bind
+  ("C-c j j" . org-roam)
+  ("C-c j t" . org-roam-today)
+  ("C-c j f" . org-roam-find-file)
+  ("C-c j i" . org-roam-insert)
+  ("C-c j g" . org-roam-show-graph)
+)
+
+; Org-roam-bibtex
+(use-package org-roam-bibtex
+  :after org-roam
+  :hook (org-roam-mode . org-roam-bibtex-mode)
+  :bind (:map org-mode-map
+  (("C-c j a" . orb-note-actions))))
+
+ ; Org-roam capture
+(setq orb-preformat-keywords
+      '("citekey" "title" "url" "author-or-editor" "keywords" "file")
+      orb-process-file-field t
+      orb-file-field-extensions "pdf")
+
+(setq orb-templates
+'(("r" "ref" plain (function org-roam-capture--get-point)
+    ""
+:file-name "${citekey}"
+:head "#+TITLE: ${citekey}: ${title}\n#+ROAM_KEY: ${ref}
+
+- tags ::
+- keywords :: ${keywords}
+
+* ${title}
+:PROPERTIES:
+:Custom_ID: ${citekey}
+:URL: ${url}
+:AUTHOR: ${author-or-editor}
+:NOTER_DOCUMENT: ${file}
+:NOTER_PAGE:
+:END:")))
+
+; Shortcut - Helm Bibtex
+(global-set-key (kbd "C-c h") 'helm-bibtex)
+
+;; Do not write anything past this comment. This is where Emacs will
+;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files (quote ("~/Dropbox/org/notes.org")))
+
+ '(package-selected-packages
+   (quote
+    (evil-mu4e mu4e-maildirs-extension mu4e-alert ht yapfify yaml-mode web-mode vimrc-mode tagedit smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv ranger rake pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements orgit org-ref pdf-tools key-chord ivy tablist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-popup live-py-mode hy-mode dash-functional htmlize helm-pydoc helm-gitignore helm-css-scss helm-company helm-c-yasnippet helm-bibtex bibtex-completion parsebib haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit git-commit with-editor transient emmet-mode elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet elfeed dactyl-mode cython-mode csv-mode company-web web-completion-data company-statistics company-auctex company-anaconda company chruby bundler inf-ruby biblio biblio-core auto-yasnippet yasnippet auctex-latexmk auctex anaconda-mode pythonic ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(elfeed-feeds nil)
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/bach.org" "~/Dropbox/org/orbit.org" "~/Dropbox/org/notes.org")))
+ '(package-selected-packages
+   (quote
+    (evil-mu4e mu4e-maildirs-extension mu4e-alert ht yapfify yaml-mode web-mode vimrc-mode tagedit smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv ranger rake pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements orgit org-ref pdf-tools key-chord ivy tablist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-popup live-py-mode hy-mode dash-functional htmlize helm-pydoc helm-gitignore helm-css-scss helm-company helm-c-yasnippet helm-bibtex bibtex-completion parsebib haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit git-commit with-editor transient emmet-mode elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet elfeed dactyl-mode cython-mode csv-mode company-web web-completion-data company-statistics company-auctex company-anaconda company chruby bundler inf-ruby biblio biblio-core auto-yasnippet yasnippet auctex-latexmk auctex anaconda-mode pythonic ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

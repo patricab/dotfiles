@@ -1,20 +1,16 @@
-* Feed                                                              :elfeed:
+* Feed                                                               :elfeed:
 ** News                                                                :news:
 *** [[https://www.nrk.no/trondelag/toppsaker.rss][Toppsaker - NRK Trøndelag]]
 ** Forskning                                                      :forskning:
 *** [[https://forskning.no/teknologi/?lab_viewport=rss][Teknologi - Forskning.no]]
 *** [[https://forskning.no/naturvitenskap/?lab_viewport=rss][Naturvitenskap - Forskning.no]]
-*** [[https://forskning.no/debatt/?lab_viewport=rss][Debatt - Forskning.no]]
 *** [[https://ntnuopen.ntnu.no/ntnu-xmlui/feed/rss_2.0/site][NTNU Open]]
 ** Space                                                              :space:
 *** https://www.nasa.gov/rss/dyn/breaking_news.rss
-*** https://blogs.nasa.gov/stationreport/feed/
-*** https://www.nasa.gov/rss/dyn/onthestation_rss.rss
 *** https://orbitalindex.com/feed.xml
 ** Hacker News                                                           :hn:
-*** https://hnrss.org/frontpage
+*** https://hnrss.org/frontpage                                      :ignore:
 ** Div                                                                  :div:
-*** https://www.reddit.com/.rss?feed=122a5a8bb6bb6263ac08ca4d40a9f5b454607de8&user=s00phie
 *** https://www.la1k.no/feed/
 *** https://hackaday.com/blog/feed/
 *** https://blog.xkcd.com/feed/
