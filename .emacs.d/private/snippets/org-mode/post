@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+#name : post
+#key : post
+#contributor : Patric A.B
+# --
+#+OPTIONS: toc:nil
+#+OPTIONS: num:nil
+#+BEGIN_EXPORT html
+---
+title: "$1"
+categories: $2
+---
+#+END_EXPORT
+
+$0

@@ -646,6 +646,20 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  )
 )
+
+(setq org-publish-project-alist
+      '(("rockandspace"
+         ;; Path to org files.
+         :base-directory "~/Dropbox/projects/rockandspace/org/"
+         :base-extension "org"
+         ;; Path to Jekyll Posts
+         :publishing-directory "~/Dropbox/projects/rockandspace/_posts/"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :html-extension "html"
+         :body-only t)))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

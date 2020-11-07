@@ -8,7 +8,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity $2 is
-  port (
+  port(
     $3 :in $4;
     $5 :out $6);
 end $2;
