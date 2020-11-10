@@ -269,14 +269,15 @@ values."
    ;; If set to `t' or `relative' line numbers are turned on in all `prog-mode' and
    ;; `text-mode' derivatives. If set to `relative', line numbers are relative.
    ;; This variable can also be set to a property list for finer control:
-   dotspacemacs-line-numbers '(:relative t
-                                :disabled-for-modes dired-mode
-                                                    doc-view-mode
-                                                    markdown-mode
-                                                    org-mode
-                                                    pdf-view-mode
-                                                    text-mode
-                                :size-limit-kb 1000)
+   ;; dotspacemacs-line-numbers '(:visual t
+   ;;                              :disabled-for-modes dired-mode
+   ;;                                                  doc-view-mode
+   ;;                                                  markdown-mode
+   ;;                                                  org-mode
+   ;;                                                  pdf-view-mode
+   ;;                                                  text-mode
+   ;;                              :size-limit-kb 1000)
+    ; NOTE: (Fixed: See line 334-335)
    ;; (default nil)
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -329,24 +330,28 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (with-eval-after-load 'org
-    (setq-default org-default-notes-file "~/Dropbox/org/notes.org")
-    (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
-    (setq org-refile-allow-creating-parent-nodes 'confirm)
-    (setq org-agenda-text-search-extra-files '(agenda-archives))
-    (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
-    (setq org-enforce-todo-dependencies t)
-    (setq org-capture-templates
-    '(("t" "Task" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
-       "** TODO %?\n  %u")
-      ("n" "Note" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
-       "** %?\n ")
-      ("a" "Article" entry (file+headline "~/Dropbox/org/notes.org" "Articles")
-       "** ART %?\n %u\n")
-      ("p" "Project" entry (file+headline "~/Dropbox/org/notes.org" "Projects")
-       "** PROJECT %?\n ")
-      )
-    ))
+
+(global-display-line-numbers-mode)
+(setq display-line-numbers-type 'relative)
+
+(with-eval-after-load 'org
+  (setq-default org-default-notes-file "~/Dropbox/org/notes.org")
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+  (setq org-refile-allow-creating-parent-nodes 'confirm)
+  (setq org-agenda-text-search-extra-files '(agenda-archives))
+  (setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
+  (setq org-enforce-todo-dependencies t)
+  (setq org-capture-templates
+  '(("t" "Task" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
+      "** TODO %?\n  %u")
+    ("n" "Note" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
+      "** %?\n ")
+    ("a" "Article" entry (file+headline "~/Dropbox/org/notes.org" "Articles")
+      "** ART %?\n %u\n")
+    ("p" "Project" entry (file+headline "~/Dropbox/org/notes.org" "Projects")
+      "** PROJECT %?\n ")
+    )
+  ))
 
 ; Keybind functions
 (fset 'evil-line-above
@@ -672,7 +677,7 @@ you should place your code here."
     ("~/Dropbox/org/bach.org" "~/Dropbox/org/orbit.org" "~/Dropbox/org/notes.org")))
  '(package-selected-packages
    (quote
-    (org-roam-bibtex evil-mu4e mu4e-maildirs-extension mu4e-alert ht yapfify yaml-mode web-mode vimrc-mode tagedit smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv ranger rake pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements orgit org-ref pdf-tools key-chord ivy tablist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-popup live-py-mode hy-mode dash-functional htmlize helm-pydoc helm-gitignore helm-css-scss helm-company helm-c-yasnippet helm-bibtex bibtex-completion parsebib haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit git-commit with-editor transient emmet-mode elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet elfeed dactyl-mode cython-mode csv-mode company-web web-completion-data company-statistics company-auctex company-anaconda company chruby bundler inf-ruby biblio biblio-core auto-yasnippet yasnippet auctex-latexmk auctex anaconda-mode pythonic ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (org-roam treemacs org-roam-bibtex evil-mu4e mu4e-maildirs-extension mu4e-alert ht yapfify yaml-mode web-mode vimrc-mode tagedit smeargle slim-mode scss-mode sass-mode rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv ranger rake pyvenv pytest pyenv-mode py-isort pug-mode pip-requirements orgit org-ref pdf-tools key-chord ivy tablist org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download mmm-mode minitest markdown-toc markdown-mode magit-gitflow magit-popup live-py-mode hy-mode dash-functional htmlize helm-pydoc helm-gitignore helm-css-scss helm-company helm-c-yasnippet helm-bibtex bibtex-completion parsebib haml-mode gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit git-commit with-editor transient emmet-mode elfeed-web simple-httpd elfeed-org elfeed-goodies ace-jump-mode noflet elfeed dactyl-mode cython-mode csv-mode company-web web-completion-data company-statistics company-auctex company-anaconda company chruby bundler inf-ruby biblio biblio-core auto-yasnippet yasnippet auctex-latexmk auctex anaconda-mode pythonic ac-ispell auto-complete ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired f evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
