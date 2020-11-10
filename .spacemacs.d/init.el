@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     (shell :variables shell-default-shell 'term)
      pdf-tools
      csv
      html
