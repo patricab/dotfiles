@@ -29,7 +29,8 @@ sudo apt-get -y install compton
 sudo apt-get -y install nm-applet
 sudo apt-get -y install volumeicon
 sudo apt-get -y install xrandr
-sudo apt-get -y install google-chrome
+#sudo apt-get -y install google-chrome
+#sudo apt-get -y install chromium-browser
 sudo apt-get -y install spotify
 sudo apt-get -y install nmap
 sudo apt-get -y install john
@@ -54,6 +55,7 @@ sudo apt-get -y install git
 sudo apt-get -y install screenfetch
 sudo apt-get -y install okular
 sudo apt-get -y install mu4e
+# Inkscape
 #sudo apt-get -y install nodejs
 #sudo apt-get -y install sonic-pi
 #sudo apt-get -y install deluge
