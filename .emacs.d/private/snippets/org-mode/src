@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 #name : src
-#key : src
+#key : sc
 #contributor : Patric A.B
 # --
 #+BEGIN_SRC $1
