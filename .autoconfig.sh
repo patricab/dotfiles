@@ -87,6 +87,7 @@ function APT() {
     # matlab18b
     # ltspice (wine)
     # slack-desktop
+    sudo apt-get -y install mu4e
     sudo apt-get -y install gcc-avr
     sudo apt-get -y install avr-libc
     sudo apt-get -y install avrdude
@@ -114,10 +115,9 @@ function APT() {
     sudo apt-get -y install nm-applet
     sudo apt-get -y install volumeicon
     sudo apt-get -y install xrandr
-    #! sudo apt-get -y install google-chrome
+    #! sudo apt-get -y install chromium-browser
     #! sudo apt-get -y install spotify
     sudo apt-get -y install nmap
-    # sudo apt-get -y install john
     sudo apt-get -y install gqrx-sdr
     sudo apt-get -y install tmux
     sudo apt-get -y install netcat
@@ -174,7 +174,7 @@ function GIT() {
     # Git setup
     git config --global core.editor vim
     git config --global user.name "patricab"
-    git config --global user.email pigface.survey@gmail.com
+    git config --global user.email "patric.berthelsen@gmail.com"
 }
 
 function EMACS() {
