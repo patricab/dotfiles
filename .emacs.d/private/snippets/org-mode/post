@@ -8,8 +8,6 @@
 #+BEGIN_EXPORT html
 ---
 title: "$1"
-thumbnail: "$2"
-feature-img: "$3"
 categories: $4
 tags: $5
 ---
