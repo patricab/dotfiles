@@ -1,7 +1,8 @@
 # -*- mode: snippet -*-
 #name : tangle-uc
 #key : uc
-#contributor : Patric A. Berthelsen
+#contributor : Patric A.B
 # --
-$0#+BEGIN_SRC emacs-lisp :tangle uc
+#+BEGIN_SRC emacs-lisp :tangle user-config.el
+$0
 #+END_SRC
