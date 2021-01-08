@@ -1,3 +1,11 @@
+* Spacmacs config function
+#+BEGIN_SRC emacs-lisp :tangle user-init.el
+(defun spacemacs/find-config-file ()
+  (interactive)
+  (find-file (concat dotspacemacs-directory "/spacemacs.org")))
+
+(spacemacs/set-leader-keys "fec" 'spacemacs/find-config-file)
+#+END_SRC
 * Line numbers
 #+BEGIN_SRC emacs-lisp :tangle user-config.el
 (global-display-line-numbers-mode)
@@ -30,6 +38,8 @@
       ("n" "Note" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
        "** %?\n ")
       ("a" "Article" entry (file+headline "~/Dropbox/org/notes.org" "Articles")
+       "** ART %?\n %u\n")
+      ("b" "Article (Bach)" entry (file+headline "~/Dropbox/ntnu/bach/bach.org" "Articles")
        "** ART %?\n %u\n")
       ("p" "Project" entry (file+headline "~/Dropbox/org/notes.org" "Projects")
        "** PROJECT %?\n ")
