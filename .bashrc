@@ -133,6 +133,8 @@ alias spec='screenfetch'
 alias gps='git push'
 alias gp='git pull'
 alias gs='git status'
+alias gc='git checkout'
+alias gb='git branch'
 
 # Path
 export vrc=$HOME/.vimrc
