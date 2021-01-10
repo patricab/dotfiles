@@ -14,7 +14,7 @@
 
 (setq org-capture-templates
 '(("t" "Task" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
-   "** TODO %?\n  %u")
+   "** TODO %?\nSCHEDULED: %u")
   ("n" "Note" entry (file+headline "~/Dropbox/org/notes.org" "Daily Log")
    "** %?\n ")
   ("a" "Article" entry (file+headline "~/Dropbox/org/notes.org" "Articles")
