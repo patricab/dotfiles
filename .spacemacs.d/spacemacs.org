@@ -107,6 +107,10 @@
 #+BEGIN_SRC emacs-lisp :tangle user-config.el
 (define-key evil-normal-state-map (kbd "C-c b") 'dotspacemacs/sync-configuration-layers)
 #+END_SRC
+*** Toggle org html save
+#+BEGIN_SRC emacs-lisp :tangle user-config.el
+(define-key evil-normal-state-map (kbd "C-c t") 'toggle-org-html-export-on-save)
+#+END_SRC
 *** Search for visual selection
 #+BEGIN_SRC emacs-lisp :tangle user-config.el
 (define-key evil-normal-state-map (kbd "&") 'search-visual)
@@ -402,4 +406,15 @@
          :headline-levels 4
          :html-extension "html"
          :body-only t)))
+#+END_SRC
+** Org export on save (toggle)
+#+BEGIN_SRC emacs-lisp :tangle user-config.el
+(defun toggle-org-html-export-on-save ()
+  (interactive)
+  (if (memq 'org-html-export-to-html after-save-hook)
+      (progn
+        (remove-hook 'after-save-hook 'org-html-export-to-html t)
+        (message "Disabled org html export on save for current buffer..."))
+    (add-hook 'after-save-hook 'org-html-export-to-html nil t)
+    (message "Enabled org html export on save for current buffer...")))
 #+END_SRC
