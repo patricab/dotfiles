@@ -17,3 +17,4 @@
 *** https://standardebooks.org/rss/new-releases
 *** https://patricab.github.io/feed.xml
 *** https://xkcd.com/rss.xml
+*** https://sarahcandersen.com/rss
