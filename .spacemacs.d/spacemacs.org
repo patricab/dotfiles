@@ -6,6 +6,32 @@
 
 (spacemacs/set-leader-keys "fec" 'spacemacs/find-config-file)
 #+END_SRC
+* Org-publish
+#+BEGIN_SRC emacs-lisp :tangle user-config.el
+(setq org-publish-project-alist
+      '(("rockandspace"
+         ;; Path to org files.
+         :base-directory "~/Dropbox/projects/rockandspace/org/"
+         :base-extension "org"
+         ;; Path to Jekyll Posts
+         :publishing-directory "~/Dropbox/projects/rockandspace/_posts/"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :html-extension "html"
+         :body-only t)))
+#+END_SRC
+** Org export on save (toggle)
+#+BEGIN_SRC emacs-lisp :tangle user-config.el
+(defun toggle-org-html-export-on-save ()
+  (interactive)
+  (if (memq 'org-html-export-to-html after-save-hook)
+      (progn
+        (remove-hook 'after-save-hook 'org-html-export-to-html t)
+        (message "Disabled org html export on save for current buffer..."))
+    (add-hook 'after-save-hook 'org-html-export-to-html nil t)
+    (message "Enabled org html export on save for current buffer...")))
+#+END_SRC
 * Line numbers
 #+BEGIN_SRC emacs-lisp :tangle user-config.el
 (global-display-line-numbers-mode)
@@ -391,30 +417,4 @@
 #+BEGIN_SRC emacs-lisp :tangle user-config.el
 ; Shortcut - Helm Bibtex
 (global-set-key (kbd "C-c h") 'helm-bibtex)
-#+END_SRC
-* Org-publish
-#+BEGIN_SRC emacs-lisp :tangle user-config.el
-(setq org-publish-project-alist
-      '(("rockandspace"
-         ;; Path to org files.
-         :base-directory "~/Dropbox/projects/rockandspace/org/"
-         :base-extension "org"
-         ;; Path to Jekyll Posts
-         :publishing-directory "~/Dropbox/projects/rockandspace/_posts/"
-         :recursive t
-         :publishing-function org-html-publish-to-html
-         :headline-levels 4
-         :html-extension "html"
-         :body-only t)))
-#+END_SRC
-** Org export on save (toggle)
-#+BEGIN_SRC emacs-lisp :tangle user-config.el
-(defun toggle-org-html-export-on-save ()
-  (interactive)
-  (if (memq 'org-html-export-to-html after-save-hook)
-      (progn
-        (remove-hook 'after-save-hook 'org-html-export-to-html t)
-        (message "Disabled org html export on save for current buffer..."))
-    (add-hook 'after-save-hook 'org-html-export-to-html nil t)
-    (message "Enabled org html export on save for current buffer...")))
 #+END_SRC

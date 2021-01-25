@@ -1,3 +1,25 @@
+(setq org-publish-project-alist
+      '(("rockandspace"
+         ;; Path to org files.
+         :base-directory "~/Dropbox/projects/rockandspace/org/"
+         :base-extension "org"
+         ;; Path to Jekyll Posts
+         :publishing-directory "~/Dropbox/projects/rockandspace/_posts/"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :html-extension "html"
+         :body-only t)))
+
+(defun toggle-org-html-export-on-save ()
+  (interactive)
+  (if (memq 'org-html-export-to-html after-save-hook)
+      (progn
+        (remove-hook 'after-save-hook 'org-html-export-to-html t)
+        (message "Disabled org html export on save for current buffer..."))
+    (add-hook 'after-save-hook 'org-html-export-to-html nil t)
+    (message "Enabled org html export on save for current buffer...")))
+
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
@@ -251,25 +273,3 @@
 
 ; Shortcut - Helm Bibtex
 (global-set-key (kbd "C-c h") 'helm-bibtex)
-
-(setq org-publish-project-alist
-      '(("rockandspace"
-         ;; Path to org files.
-         :base-directory "~/Dropbox/projects/rockandspace/org/"
-         :base-extension "org"
-         ;; Path to Jekyll Posts
-         :publishing-directory "~/Dropbox/projects/rockandspace/_posts/"
-         :recursive t
-         :publishing-function org-html-publish-to-html
-         :headline-levels 4
-         :html-extension "html"
-         :body-only t)))
-
-(defun toggle-org-html-export-on-save ()
-  (interactive)
-  (if (memq 'org-html-export-to-html after-save-hook)
-      (progn
-        (remove-hook 'after-save-hook 'org-html-export-to-html t)
-        (message "Disabled org html export on save for current buffer..."))
-    (add-hook 'after-save-hook 'org-html-export-to-html nil t)
-    (message "Enabled org html export on save for current buffer...")))
