@@ -4,6 +4,7 @@ clear
 
 # Installing packages, updating system and creating directories
 sudo apt-get -y update
+sudo apt-get -y install cmake
 sudo apt-get -y install snapd
 sudo apt-get -y install wine
 sudo apt-get -y install texlive
