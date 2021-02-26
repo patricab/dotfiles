@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-#name : tangle-uc
-#key : uc
-#contributor : Patric A.B
-# --
-#+BEGIN_SRC emacs-lisp :tangle user-config.el
-$0
-#+END_SRC
