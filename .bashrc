@@ -12,4 +12,5 @@ alias gs='git status'
 alias gc='git checkout'
 alias gb='git branch'
 
+source ~/.git-completion.bash
 
