@@ -135,6 +135,7 @@ alias gp='git pull'
 alias gs='git status'
 alias gc='git checkout'
 alias gb='git branch'
+alias gu='git remote update origin --prune'
 
 # Path
 export vrc=$HOME/.vimrc
