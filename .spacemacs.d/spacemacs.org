@@ -65,7 +65,7 @@
        "** %?\n")
       ("a" "Article" entry (file+headline "~/Dropbox/org/notes.org" "Articles")
        "** ART %?\nSCHEDULED: <%<%Y-%m-%d %a>>")
-      ("b" "Article (Bach)" entry (file+headline "~/Dropbox/ntnu/bach/bach.org" "Articles")
+      ("b" "Article (Bach)" entry (file+headline "~/Dropbox/ntnu/bach/bach.org" "Artikler")
        "** ART %?\n %u\n")
       ("p" "Project" entry (file+headline "~/Dropbox/org/notes.org" "Projects")
        "** PROJECT %?\n ")
