@@ -34,8 +34,8 @@
 #+END_SRC
 * Line numbers
 #+BEGIN_SRC emacs-lisp :tangle user-config.el
-(global-display-line-numbers-mode)
-(setq display-line-numbers-type 'relative)
+;; (global-display-line-numbers-mode)
+;; (setq display-line-numbers-type 'relative)
 #+END_SRC
 * Org mode
 #+BEGIN_SRC emacs-lisp :tangle user-config.el
@@ -167,12 +167,16 @@
 *** Org refile
 #+BEGIN_SRC emacs-lisp :tangle user-config.el
 (define-key evil-normal-state-map (kbd ", r") 'org-refile)
-(define-key evil-normal-state-map (kbd ", v") 'org-set-tags-command))
+(define-key evil-normal-state-map (kbd ", v") 'org-set-tags-command)
 #+END_SRC
 *** Org notes file
 #+BEGIN_SRC emacs-lisp :tangle user-config.el
 (global-set-key (kbd "C-c n")
 (lambda () (interactive) (find-file "~/Dropbox/org/notes.org")))
+#+END_SRC
+*** Helm bibtex
+#+BEGIN_SRC emacs-lisp :tangle user-config.el
+(global-set-key (kbd "C-c h") 'helm-bibtex))
 #+END_SRC
 * Latex
 ** Formatting
