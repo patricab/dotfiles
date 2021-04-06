@@ -101,10 +101,12 @@
 (define-key evil-normal-state-map (kbd "M-k") 'backward-paragraph)
 
 (define-key evil-normal-state-map (kbd ", r") 'org-refile)
-(define-key evil-normal-state-map (kbd ", v") 'org-set-tags-command))
+(define-key evil-normal-state-map (kbd ", v") 'org-set-tags-command)
 
 (global-set-key (kbd "C-c n")
 (lambda () (interactive) (find-file "~/Dropbox/org/notes.org")))
+
+(global-set-key (kbd "C-c h") 'helm-bibtex))
 
 (setq-default c-default-style "bsd")
 (setq-default c-basic-offset 3)

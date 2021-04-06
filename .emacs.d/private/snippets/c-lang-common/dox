@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# contributor: Patric Berhtelsen <patric.berthelsen@gmail.com>
+# name: Function Doxygen Doc
+# key: dox
+# group: doxygen
+# --
+/**
+  @brief ${1:function description}
+
+  @param ${2:param}
+
+  @return ${3:return type}
+*/
