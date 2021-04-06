@@ -18,3 +18,4 @@
 *** https://patricab.github.io/feed.xml
 *** https://xkcd.com/rss.xml
 *** https://sarahcandersen.com/rss
+*** https://muircheartblog.wpcomstaging.com/feed/
