@@ -65,5 +65,6 @@
     ],
     "git.alwaysSignOff": true,
     "git.enableCommitSigning": true,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "window.menuBarVisibility": "toggle"
 }

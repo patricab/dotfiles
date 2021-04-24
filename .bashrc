@@ -12,6 +12,8 @@ alias gp='git pull'
 alias gs='git status'
 alias gc='git checkout'
 alias gb='git branch'
+alias gst='git stash'
+alias gr='git reset'
 
 source ~/.git-completion.bash
 
