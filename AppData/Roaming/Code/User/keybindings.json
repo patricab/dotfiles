@@ -177,5 +177,45 @@
 	{
 		"key": "alt+0",
 		"command": "workbench.action.focusSideBar"
+	},
+	{
+		"key": "ctrl+alt+t",
+		"command": "platformio-ide.newTerminal"
+	},
+	{
+		"key": "ctrl+n",
+		// "command": "workbench.action.terminal.newInActiveWorkspace"
+		"command": "workbench.action.terminal.newWithCwd",
+		"args": {
+			"cwd": "${fileDirname}"
+  }
+	},
+	{
+		"key": "ctrl+alt+n",
+		"command": "workbench.action.terminal.new"
+	},
+	{
+		"key": "ctrl+alt+b",
+		"command": "platformio-ide.build"
+	},
+	{
+		"key": "ctrl+alt+b",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "apio build\n"
+		},
+		"when": "editorLangID == Verilog"
+	},
+	{
+		"key": "ctrl+alt+u",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "apio upload\n"
+		},
+		"when": "editorLangID == verilog"
+	},
+	{
+		"key": "ctrl+alt+u",
+		"command": "platformio-ide.upload"
 	}
 ]
