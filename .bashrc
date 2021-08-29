@@ -138,11 +138,13 @@ alias gc='git checkout'
 alias gb='git branch'
 alias gu='git remote update origin --prune'
 alias gsp='git pull --recurse-submodules'
+alias gst='git stash'
+alias gr='git reset'
 
 # Path
 export vrc=$HOME/.vimrc
 export GOPATH=$HOME/go
 export PATH=$PATH:/home/pab/Documents/arduino-1.8.10/
-source /etc/bash_completion.d/git-prompt
+#source /etc/bash_completion.d/git-prompt
 
 #curl parrot.live
