@@ -143,12 +143,15 @@ alias gsp='git pull --recurse-submodules'
 alias gsc='git clone --recurse-submodules'
 alias gst='git stash'
 alias gr='git reset'
-alias vivado='/home/pab/Documents/Xilinx/Vivado/2020.1/bin/vivado'
+alias vivado='/home/pab/Documents/Vivado/2020.1/bin/vivado'
+alias vpnc='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no'
+alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
 
 # Path
 export vrc=$HOME/.vimrc
 export GOPATH=$HOME/go
 export PATH=$PATH:/home/pab/Documents/arduino-1.8.10/
 #source /etc/bash_completion.d/git-prompt
+. /usr/share/autojump/autojump.sh
 
 #curl parrot.live

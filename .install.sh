@@ -56,6 +56,7 @@ sudo apt-get -y install git
 sudo apt-get -y install screenfetch
 sudo apt-get -y install okular
 sudo apt-get -y install mu4e
+sudo apt-get -y install autojump
 # Inkscape
 #sudo apt-get -y install nodejs
 #sudo apt-get -y install sonic-pi
