@@ -156,3 +156,5 @@ export PATH=$PATH:/home/patricab/
 . /usr/share/autojump/autojump.sh
 
 #curl parrot.live
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
