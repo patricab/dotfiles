@@ -151,6 +151,7 @@ alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
 export vrc=$HOME/.vimrc
 export GOPATH=$HOME/go
 export PATH=$PATH:/home/pab/Documents/arduino-1.8.10/
+export PATH=$PATH:/home/patricab/
 #source /etc/bash_completion.d/git-prompt
 . /usr/share/autojump/autojump.sh
 
