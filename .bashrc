@@ -152,6 +152,7 @@ alias gr='git reset'
 alias vivado='/home/pab/Documents/Vivado/2020.1/bin/vivado'
 alias vpnc='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no'
 alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
+alias readme='npx readme-md-generator'
 
 # Path
 export vrc=$HOME/.vimrc
