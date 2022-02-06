@@ -161,6 +161,7 @@ export vrc=$HOME/.vimrc
 export GOPATH=$HOME/go
 export PATH=$PATH:/home/pab/Documents/arduino-1.8.10/
 export PATH=$PATH:/home/patricab/
+export PATH=$PATH:/usr/local/go/bin
 #source /etc/bash_completion.d/git-prompt
 . /usr/share/autojump/autojump.sh
 
