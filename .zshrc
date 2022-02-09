@@ -19,6 +19,11 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+gsh() {
+	eval $(ssh-agent -s)
+	ssh-add $1
+}
+
 alias popd='popd -n'
 alias term='i3-sensible-terminal'
 alias python='python3.7'
