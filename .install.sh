@@ -26,6 +26,7 @@ sudo apt-get -y install git
 sudo apt-get -y install screenfetch
 sudo apt-get -y install autojump
 sudo apt-get -y install nodejs
+sudo apt-get -y install zsh
 
 # Vim plugins
 cd ~
