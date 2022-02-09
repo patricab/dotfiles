@@ -13,7 +13,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /home/pab/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias ll='ls -alF'
 alias la='ls -A'
