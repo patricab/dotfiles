@@ -52,5 +52,9 @@ alias gr='git reset'
 alias vivado='/home/pab/Documents/Vivado/2020.1/bin/vivado'
 alias vpnc='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no'
 alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
+alias readme='npx readme-md-generator'
+alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
 
-export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin
+export PATH=/usr/local/lib/nodejs/node-v16.13.2-linux-x64/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH

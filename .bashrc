@@ -158,7 +158,6 @@ alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
 
 # Path
 export vrc=$HOME/.vimrc
-export GOPATH=$HOME/go
 export PATH=$PATH:/home/pab/Documents/arduino-1.8.10/
 export PATH=$PATH:/home/patricab/
 export PATH=$PATH:/usr/local/go/bin
