@@ -15,15 +15,23 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+## User functions
 gsh() {
 	eval $(ssh-agent -s)
 	ssh-add $1
 }
 
+rec() {
+	asciinema rec $1
+	asciicast2gif -t solarized-dark $1 $1.gif
+}
+
+# Random aliases
 alias popd='popd -n'
 alias term='i3-sensible-terminal'
 alias python='python3.7'
@@ -55,6 +63,7 @@ alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
 alias readme='npx readme-md-generator'
 alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
 
+# PATHs
 export PATH=$PATH:/usr/local/go/bin
 export PATH=/usr/local/lib/nodejs/node-v16.13.2-linux-x64/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
