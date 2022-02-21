@@ -154,12 +154,13 @@ alias vivado='/home/pab/Documents/Vivado/2020.1/bin/vivado'
 alias vpnc='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no'
 alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
 alias readme='npx readme-md-generator'
+alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
 
 # Path
 export vrc=$HOME/.vimrc
-export GOPATH=$HOME/go
 export PATH=$PATH:/home/pab/Documents/arduino-1.8.10/
 export PATH=$PATH:/home/patricab/
+export PATH=$PATH:/usr/local/go/bin
 #source /etc/bash_completion.d/git-prompt
 . /usr/share/autojump/autojump.sh
 
