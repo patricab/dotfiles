@@ -23,7 +23,7 @@ alias l='ls -CF'
 ## User functions
 gsh() {
 	eval $(ssh-agent -s)
-	ssh-add $1
+	ssh-add ~/.ssh/$1
 }
 
 rec() {
