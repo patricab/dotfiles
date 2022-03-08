@@ -31,6 +31,11 @@ rec() {
 	asciicast2gif -t solarized-dark $1 $1.gif
 }
 
+cls() { 
+	local HISTSIZE=0;
+	clear
+}
+
 # Random aliases
 alias popd='popd -n'
 alias term='i3-sensible-terminal'
@@ -40,7 +45,7 @@ alias activate='source env/bin/activate'
 #alias gc='google-chrome --force-device-scale-factor=1.4'
 alias ltc='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
 alias gcn='google-chrome --incognito --force-device-scale-factor=1.4'
-alias cls='history -c && history -w; clear'
+#alias cls='history -c && history -w; clear'
 alias ds='dirs -v' 
 alias gl='git ls-tree -r master --name-only'
 alias gu='git remote update origin --prune'
@@ -67,3 +72,5 @@ alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=/usr/local/lib/nodejs/node-v16.13.2-linux-x64/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
+#export PATH=/home/pab/Documents/Unity/auto:$PATH
+#export GOPATH=/home/pab/.go
