@@ -40,6 +40,7 @@ vim +PluginInstall +qall # Install plugins
 git config --global core.editor "code --wait"
 git config --global user.name "patricab"
 git config --global user.email patric.berthelsen@gmail.com
+git config credential.helper cache # Make sure I don't have to type in my password 100 times
 
 # Github CLI (GH)
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
