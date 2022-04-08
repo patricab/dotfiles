@@ -21,9 +21,17 @@ alias la='ls -A'
 alias l='ls -CF'
 
 ## User functions
+# Git shell: hotfix for ssh key errors on WSL. 
+# Arg: ssh _id_ file path
 gsh() {
 	eval $(ssh-agent -s)
 	ssh-add ~/.ssh/$1
+}
+
+# Git fetch: fetch updates for specific branch
+# Arg: target branch
+gf() {
+	git fetch origin $1:$1
 }
 
 rec() {
@@ -45,7 +53,6 @@ alias activate='source env/bin/activate'
 #alias gc='google-chrome --force-device-scale-factor=1.4'
 alias ltc='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
 alias gcn='google-chrome --incognito --force-device-scale-factor=1.4'
-#alias cls='history -c && history -w; clear'
 alias ds='dirs -v' 
 alias gl='git ls-tree -r master --name-only'
 alias gu='git remote update origin --prune'
