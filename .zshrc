@@ -59,13 +59,13 @@ alias gu='git remote update origin --prune'
 alias spec='screenfetch'
 alias ga='git add'
 alias gaa='git add --all'
-alias gps='git push --follow-tags'
+alias gps='git push && git push --tags'
 alias gp='git pull'
 alias gs='git status'
 alias gc='git checkout'
 alias gb='git branch'
 alias gu='git remote update origin --prune'
-alias gpu='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
+alias gpu='git push -u origin $(git rev-parse --abbrev-ref HEAD) && git push --tags'
 alias gsp='git pull --recurse-submodules'
 alias gsc='git clone --recurse-submodules'
 alias gsi='git submodule update --init'
@@ -81,5 +81,9 @@ alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
 export PATH=$PATH:/usr/local/go/bin
 export PATH=/usr/local/lib/nodejs/node-v16.13.2-linux-x64/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
+export PATH=~/.local/bin:$PATH
 #export PATH=/home/pab/Documents/Unity/auto:$PATH
 #export GOPATH=/home/pab/.go
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
