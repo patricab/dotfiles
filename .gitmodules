@@ -10,3 +10,6 @@
 [submodule ".gdb-dashboard"]
 	path = .gdb-dashboard
 	url = https://github.com/cyrus-and/gdb-dashboard
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = ./.oh-my-zsh
