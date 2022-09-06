@@ -190,4 +190,5 @@ export PATH=~/.local/bin:$PATH
 
 # Configs
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
-bindkey '^ ' autosuggest-execute
+bindkey '^[^M' autosuggest-execute
+bindkey '^[^J' autosuggest-execute
