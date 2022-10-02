@@ -84,7 +84,7 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh autojump fzf zsh-autosuggestions colored-man-pages)
+plugins=(git gh autojump fzf zsh-autosuggestions colored-man-pages web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -189,6 +189,6 @@ export PATH=~/.local/bin:$PATH
 #source /usr/share/doc/fzf/examples/completion.zsh
 
 # Configs
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+#export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 bindkey '^[^M' autosuggest-execute
 bindkey '^[^J' autosuggest-execute

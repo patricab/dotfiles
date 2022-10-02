@@ -1,37 +1,16 @@
 #!/bin/bash
-cd ~
 clear
 
-# Installing packages, updating system and creating directories
-sudo apt-get -y update
-sudo apt-get -y install cmake
-sudo apt-get -y install snapd
-sudo apt-get -y install wine
-sudo apt-get -y install wireshark
-sudo apt-get -y install slack-desktop
-sudo apt-get -y install vim
-sudo apt-get -y install python3
-sudo apt-get -y install dos2unix
-sudo apt-get -y install nmap
-sudo apt-get -y install gqrx
-sudo apt-get -y install tmux
-sudo apt-get -y install netcat
-sudo apt-get -y install pm-utils
-sudo apt-get -y install tcpdump
-sudo apt-get -y install hping3
-sudo apt-get -y install ranger
-sudo apt-get -y install zathura
-sudo apt-get -y install feh
-sudo apt-get -y install git
-sudo apt-get -y install screenfetch
-sudo apt-get -y install autojump
-sudo apt-get -y install nodejs
-sudo apt-get -y install zsh
+# Installing packages, update system
+sudo pacman -Syu
+sudo pacman -S --needed --noconfirm cmake wine wireshark vim python3 dos2unix nmap tmux netcat tcpdump hping3 ranger zathura feh git screenfetch nodejs zsh github-cli vlc base-devel obsidian
+# sudo pacman -S --needed  slack-desktop
+# sudo pacman -S --needed pm-utils
+# sudo pacman -S --needed autojump
 
 # Vim plugins
-cd ~
-mkdir -p .vim/bundle
-cd .vim/bundle
+mkdir -p ~/.vim/bundle
+cd ~/.vim/bundle
 git clone https://github.com/VundleVim/Vundle.vim
 vim +PluginInstall +qall # Install plugins
 
@@ -42,13 +21,20 @@ git config --global user.name "patricab"
 git config --global user.email patric.berthelsen@gmail.com
 git config credential.helper cache # Make sure I don't have to type in my password 100 times
 
-# Github CLI (GH)
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-sudo apt -y update
-sudo apt -y install gh
-gh auth login
-gh conig set editor "code --wait"
+# Yay
+cd tmp && git clone https://aur.archlinux.org/yay.git
+cd yay && makepkg -si --noconfirm && cd ~
 
-# Upgrade system and reboot
-sudo apt-get -y upgrade
+# Nvidia driver
+# sudo mhwd -a pci nonfree 0300
+# sudo reboot
+
+## AUR packages
+yay -S dropbox visual-studio-code-bin slack-desktop
+# Github CLI (GH)
+# curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+# echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+# sudo apt -y update
+# sudo apt -y install gh
+# gh auth login
+# gh conig set editor "code --wait"
