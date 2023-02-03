@@ -13,3 +13,5 @@
 	sha = rev-parse --short HEAD
 	st = add
 	ust = restore --staged
+[pull]
+	rebase = false

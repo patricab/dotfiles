@@ -149,7 +149,7 @@ cls() {
 alias popd='popd -n'
 alias term='i3-sensible-terminal'
 alias python='python3.7'
-alias update='sudo apt -y update --allow-unauthenticated; sudo apt -y upgrade --allow-unauthenticated'
+alias update='sudo pacman -Syu && yay -Syu'
 alias activate='source env/bin/activate'
 #alias gc='google-chrome --force-device-scale-factor=1.4'
 alias ltc='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
@@ -172,23 +172,29 @@ alias gsc='git clone --recurse-submodules'
 alias gsi='git submodule update --init'
 alias gst='git stash'
 alias gr='git reset'
+alias ggu='git remote get-url origin'
 alias vivado='/home/pab/Documents/Vivado/2020.1/bin/vivado'
 alias vpnc='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no'
 alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
 alias readme='npx readme-md-generator'
 alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
+alias pacman='sudo pacman'
+alias nv='nvim'
 
 # PATHs
 export PATH=$PATH:/usr/local/go/bin
+# export PATH=/home/patricab/Documents/oss-cad-suite/bin:$PATH
 export PATH=/usr/local/lib/nodejs/node-v16.13.2-linux-x64/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.local/bin:$PATH
+export PATH=$PATH:$ZSH
 #export PATH=/home/pab/Documents/Unity/auto:$PATH
 #export GOPATH=/home/pab/.go
 #source /usr/share/doc/fzf/examples/key-bindings.zsh
 #source /usr/share/doc/fzf/examples/completion.zsh
 
 # Configs
+export EDITOR=/usr/bin/nvim
 #export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 bindkey '^[^M' autosuggest-execute
 bindkey '^[^J' autosuggest-execute
