@@ -4,7 +4,8 @@ clear
 # Installing packages, update system
 sudo pacman -Syu
 sudo pacman -S --needed --noconfirm cmake wine wireshark vim python3 dos2unix nmap tmux netcat tcpdump hping3 ranger zathura \
-feh git screenfetch nodejs zsh github-cli vlc base-devel obsidian make patch autojump htop docker docker-compose neovim vlc 
+feh git screenfetch nodejs zsh github-cli vlc base-devel obsidian make patch autojump htop docker docker-compose neovim vlc mesa \
+
 # sudo pacman -S --needed  slack-desktop
 # sudo pacman -S --needed pm-utils
 # sudo pacman -S --needed autojump
