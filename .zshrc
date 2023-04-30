@@ -149,7 +149,7 @@ cls() {
 alias popd='popd -n'
 alias term='i3-sensible-terminal'
 alias python='python3.7'
-alias update='sudo pacman -Syu && yay -Syu'
+alias update='sudo pacman -Syu --noconfirm && yay -Syu --noconfirm'
 alias activate='source env/bin/activate'
 #alias gc='google-chrome --force-device-scale-factor=1.4'
 alias ltc='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
