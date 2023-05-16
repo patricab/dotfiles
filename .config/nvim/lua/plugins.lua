@@ -11,6 +11,9 @@ return require('packer').startup(function(use)
 	use {"theprimeagen/harpoon"}
 	use {"mbbill/undotree"}
 	use {"tpope/vim-fugitive"}
+	use {"nvim-lualine/lualine.nvim"}
+    -- Using Packer:
+    use {"Mofiqul/dracula.nvim"}
 
     -- Telescope
 	use {
@@ -18,7 +21,6 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use {"BurntSushi/ripgrep"}
 
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
@@ -34,24 +36,35 @@ return require('packer').startup(function(use)
 	require('nvim_comment').setup()
 
 	--LSP
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{                                      -- Optional
-			'williamboman/mason.nvim',
-			run = function()
-				pcall(vim.cmd, 'MasonUpdate')
-			end,
-		},
-		{'williamboman/mason-lspconfig.nvim'}, -- Optional
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
+	-- use {
+	-- 	'VonHeikemen/lsp-zero.nvim',
+	-- 	branch = 'v2.x',
+	-- 	requires = {
+	-- 		-- LSP Support
+	-- 		{'neovim/nvim-lspconfig'},             -- Required
+	-- 		{                                      -- Optional
+	-- 		'williamboman/mason.nvim',
+	-- 		run = function()
+	-- 			pcall(vim.cmd, 'MasonUpdate')
+	-- 		end,
+	-- 	},
+	-- 	{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
-		-- Autocompletion
-		{'hrsh7th/nvim-cmp'},     -- Required
-		{'hrsh7th/cmp-nvim-lsp'}, -- Required
-		{'L3MON4D3/LuaSnip'},     -- Required
-	}
-}
+	-- 	-- Autocompletion
+	-- 	{'hrsh7th/nvim-cmp'},     -- Required
+	-- 	{'hrsh7th/cmp-nvim-lsp'}, -- Required
+	-- 	{'L3MON4D3/LuaSnip'},     -- Required
+	-- }}
+    use {
+        "startup-nvim/startup.nvim",
+        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+        config = function()
+            require"startup".setup()
+        end
+    }
 end)

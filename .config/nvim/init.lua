@@ -1,5 +1,7 @@
 require('plugins')
 require('remap')
+-- Colorscheme
+vim.cmd[[colorscheme dracula]]
 --
 -- disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrw = 1
@@ -26,9 +28,11 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.cmd[[colorscheme dracula]]
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+
