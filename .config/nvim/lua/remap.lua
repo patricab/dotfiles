@@ -41,7 +41,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<leader>wm", "<C-w>|") -- Maximize window
 vim.keymap.set("n", "<leader>we", "<C-w>=") -- Equalize windows
 vim.keymap.set("n", "<leader>wc", "<C-w>o") -- Close all but window
-vim.keymap.set("n", "<leader>w/", ":vsp %<CR>") -- Vsplit current split
+vim.keymap.set("n", "<leader>w/", ":vsp %<CR><C-w>l") -- Vsplit current split
 
 -- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 -- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
