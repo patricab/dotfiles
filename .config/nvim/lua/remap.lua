@@ -18,7 +18,7 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.tmux/tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Visual selection
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -36,6 +36,8 @@ vim.keymap.set("n", "<M-k>", "{zz")
 -- Windows
 vim.keymap.set("n", "<C-h>", "<C-w>h") -- Move between splits
 vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<leader>wm", "<C-w>|") -- Maximize window
 vim.keymap.set("n", "<leader>we", "<C-w>=") -- Equalize windows
 vim.keymap.set("n", "<leader>wc", "<C-w>o") -- Close all but window
