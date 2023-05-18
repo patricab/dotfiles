@@ -64,10 +64,11 @@ function MAIN() {
 
 function PACMAN() {
     # Install packages
-    sudo pacman -Syu
-    sudo pacman -S --needed --noconfirm cmake wine wireshark vim python3 dos2unix nmap tmux netcat tcpdump hping3 ranger zathura \
-    feh git screenfetch nodejs zsh github-cli vlc base-devel obsidian make patch autojump htop docker docker-compose neovim vlc mesa \
-    ripgrep fzf
+    pacman -Syu
+    # sudo pacman -S --needed --noconfirm cmake wine wireshark vim python3 dos2unix nmap tmux netcat tcpdump hping3 ranger zathura \
+    # feh git screenfetch nodejs zsh github-cli vlc base-devel obsidian make patch autojump htop docker docker-compose neovim vlc mesa \
+    # ripgrep fzf
+    pacman -S --needed --noconfirm - < packages
 }
 
 # function PENTEST() {
