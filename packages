@@ -1,14 +1,12 @@
 cmake
 wine
-wireshark
 vim
 python3
 dos2unix
 nmap
 tmux
-netcat
+gnu-netcat
 tcpdump
-hping3
 ranger
 zathura
 feh
@@ -21,7 +19,6 @@ base-devel
 obsidian
 make
 patch
-autojump
 htop
 docker
 docker-compose
@@ -31,3 +28,5 @@ mesa
 ripgrep
 fzf
 tldr
+keepassxc
+sl

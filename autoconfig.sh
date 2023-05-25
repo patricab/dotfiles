@@ -1,32 +1,20 @@
 #!/bin/bash
-s1="On"
-s2="On"
-s3="On"
-s4="On"
-s5="On"
+s1="Off"
+s2="Off"
+s3="Off"
+s4="Off"
+s5="Off"
 clear
-
-# FUNCTION=("PACMAN" "PENTEST" "VIM" "HARDLINK" "GIT" "EMACS" "NORDVPN" "DROPBOX" "UPGRADE")
-FUNCTION=("PACMAN" "VIM" "HARDLINK" "GIT" "YAY")
-
-if [ $1 == -d ] || [ $1 == --default ];
-then
-    pacman -Sy
-    for i in "${!FUNCTION[@]}";
-    do
-        ${FUNCTION[$i]}
-    done
-fi
 
 function MAIN() {
     clear
     echo "patricab Automatic Config Script"
     echo "======================"
     echo "1) Pacman-packages: $s1"
-    echo "2) Vim plugins: $s2"
-    echo "3) Hardlink config files: $s4"
-    echo "4) Git setup: $s5"
-    echo "5) Yay setup: $s6"
+    echo "2) Hardlink config files: $s2"
+    echo "3) Vim plugins: $s3"
+    echo "4) Git setup: $s4"
+    echo "5) Yay setup: $s5"
     echo "----------------------"
     echo "i) Install "
     echo "r) Reset"
@@ -35,14 +23,13 @@ function MAIN() {
     read -p "> " ans
 
     case $ans in
-        1) s1="Off"; unset FUNCTION[0]; MAIN ;;
-        2) s2="Off"; unset FUNCTION[1]; MAIN ;;
-        3) s3="Off"; unset FUNCTION[2]; MAIN ;;
-        4) s4="Off"; unset FUNCTION[3]; MAIN ;;
-        5) s5="Off"; unset FUNCTION[4]; MAIN ;;
+        1) s1="On"; set FUNCTION[0] = $s1; MAIN ;;
+        2) s2="On"; set FUNCTION[1] = $s2; MAIN ;;
+        3) s3="On"; set FUNCTION[2] = $s3; MAIN ;;
+        4) s4="On"; set FUNCTION[3] = $s4; MAIN ;;
+        5) s5="On"; set FUNCTION[4] = $s5; MAIN ;;
 
         [iI])
-            sudo apt-get -y update
             for i in "${!FUNCTION[@]}";
             do
                 ${FUNCTION[$i]}
@@ -54,6 +41,8 @@ function MAIN() {
             s3="On"
             s4="On"
             s5="On"
+            FUNCTION=("PACMAN" "HARDLINK" "GIT" "VIM" "YAY")
+
             clear
             MAIN
             ;;
@@ -64,11 +53,8 @@ function MAIN() {
 
 function PACMAN() {
     # Install packages
-    pacman -Syu
-    # sudo pacman -S --needed --noconfirm cmake wine wireshark vim python3 dos2unix nmap tmux netcat tcpdump hping3 ranger zathura \
-    # feh git screenfetch nodejs zsh github-cli vlc base-devel obsidian make patch autojump htop docker docker-compose neovim vlc mesa \
-    # ripgrep fzf
-    pacman -S --needed --noconfirm - < packages
+    sudo pacman-mirrors -f5 && sudo pacman -Syu
+    sudo pacman -S --needed --noconfirm - < packages
 }
 
 # function PENTEST() {
@@ -82,17 +68,28 @@ function PACMAN() {
 
 function VIM() {
     # Vim plugins
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
 
 function HARDLINK() {
     # Config files
-    cd ~
-    ln -f .conf .config/i3/config # Adds hardlink between custom i3 config and i3/config
+    git submodule update --init
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    # ln -f .conf .config/i3/config # Adds hardlink between custom i3 config and i3/config
+    ln -s $(pwd)/zshrc ~/.zshrc
+    ln -s $(pwd)/nvim ~/.config/nvim
+    ln -s $(pwd)/tmux ~/.config/tmux
+    ln -s $(pwd)/tmux.conf ~/.tmux.conf
+    ln -s $(pwd)/zshrc ~/.zshrc
+    ln -s $(pwd)/oh-my-zsh ~/.oh-my-zsh
+    ln -s $(pwd)/gitconfig ~/.gitconfig
+    ln -s $(pwd)/gdbinit ~/.gdbinit
 }
 
 function GIT() {
-    # Git setup
+# Git setup
     git config --global core.editor "nvim"
     git config --global user.name "patricab"
     git config --global user.email "patric.berthelsen@gmail.com"
@@ -118,5 +115,15 @@ function YAY() {
     # Dropbox
     yay -S dropbox slack-desktop
 }
+
+if [[ $1 == -d ]]
+then
+    FUNCTION=("PACMAN" "HARDLINK" "GIT" "VIM" "YAY")
+    for i in "${!FUNCTION[@]}";
+    do
+        ${FUNCTION[$i]}
+    done
+    exit
+fi
 
 MAIN
