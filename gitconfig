@@ -1,3 +1,5 @@
 [user]
 	email = patric.berthelsen@gmail.com
 	name = patricab
+[core]
+	editor = nvim

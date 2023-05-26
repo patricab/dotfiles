@@ -17,17 +17,18 @@ function MAIN() {
     echo "5) Yay setup: $s5"
     echo "----------------------"
     echo "i) Install "
+    echo "a) All"
     echo "r) Reset"
     echo "q) Quit"
     echo "======================"
     read -p "> " ans
 
     case $ans in
-        1) s1="On"; set FUNCTION[0] = $s1; MAIN ;;
-        2) s2="On"; set FUNCTION[1] = $s2; MAIN ;;
-        3) s3="On"; set FUNCTION[2] = $s3; MAIN ;;
-        4) s4="On"; set FUNCTION[3] = $s4; MAIN ;;
-        5) s5="On"; set FUNCTION[4] = $s5; MAIN ;;
+        1) s1="On"; FUNCTION[0]="PACMAN"; MAIN ;;
+        2) s2="On"; FUNCTION[1]="HARDLINK"; MAIN ;;
+        3) s3="On"; FUNCTION[2]="GIT"; MAIN ;;
+        4) s4="On"; FUNCTION[3]="VIM"; MAIN ;;
+        5) s5="On"; FUNCTION[4]="YAY"; MAIN ;;
 
         [iI])
             for i in "${!FUNCTION[@]}";
@@ -35,7 +36,7 @@ function MAIN() {
                 ${FUNCTION[$i]}
             done
             ;;
-        [rR])
+        [aA])
             s1="On"
             s2="On"
             s3="On"
@@ -46,6 +47,18 @@ function MAIN() {
             clear
             MAIN
             ;;
+        [rR])
+            s1="Off"
+            s2="Off"
+            s3="Off"
+            s4="Off"
+            s5="Off"
+	    unset FUNCTION
+
+            clear
+            MAIN
+            ;;
+
         q) exit ;;
         *) MAIN ;;
     esac
@@ -70,7 +83,7 @@ function VIM() {
     # Vim plugins
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+    #nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 }
 
 function HARDLINK() {
@@ -113,7 +126,7 @@ function GIT() {
 
 function YAY() {
     # Dropbox
-    yay -S dropbox slack-desktop
+    yay -S --needed --noconfirm - < yay
 }
 
 if [[ $1 == -d ]]
