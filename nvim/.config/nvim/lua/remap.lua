@@ -2,9 +2,9 @@ vim.g.mapleader = " "
 
 -- Utils
 vim.keymap.set("n", "Q", "<nop>")
-vim.keymap.set("n", "W", vim.cmd.w)
-vim.keymap.set("n", "<leader>q", vim.cmd.so)
-vim.keymap.set("n", "<leader>s", function() vim.cmd.so() vim.cmd.PackerSync() end)
+vim.keymap.set("n", "W", ":w<CR>")
+vim.keymap.set("n", "<leader>q", ":so<CR>")
+vim.keymap.set("n", "<leader>s", ":so | PackerSync<CR>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<leader><tab>", ":e#<CR>") -- Jump to previous file
 

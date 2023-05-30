@@ -84,7 +84,8 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh autojump fzf zsh-autosuggestions colored-man-pages web-search)
+#plugins=(git gh autojump fzf zsh-autosuggestions colored-man-pages web-search)
+plugins=(git gh autojump fzf colored-man-pages web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -179,8 +180,7 @@ alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
 alias readme='npx readme-md-generator'
 alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
 alias pacman='sudo pacman'
-alias nv='nvim'
-alias vim="nvim"
+alias nv="nvim"
 alias oss-cad='source ~/Documents/oss-cad-suite/environment'
 
 # PATHs
