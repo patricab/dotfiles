@@ -21,7 +21,7 @@ vim.opt.smartindent = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
 vim.opt.undofile = true
 vim.opt.guicursor = ""
 
@@ -37,3 +37,9 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+-- HMID formatting
+vim.opt.colorcolumn = "72"
+vim.opt.textwidth = 72
+
+-- Verilog formatting
+vim.cmd("autocmd FileType verilog setlocal commentstring=//\\ %s")

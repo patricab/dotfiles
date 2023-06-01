@@ -30,8 +30,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<M-j>", "}zz")
-vim.keymap.set("n", "<M-k>", "{zz")
+-- vim.keymap.set("n", "<M-j>", "}zz")
+-- vim.keymap.set("n", "<M-k>", "{zz")
 
 -- Windows
 vim.keymap.set("n", "<C-h>", "<C-w>h") -- Move between splits

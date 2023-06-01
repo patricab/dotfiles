@@ -3,6 +3,7 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
@@ -18,6 +19,7 @@ return require('packer').startup(function(use)
 
 	use {"nvim-lualine/lualine.nvim"}
     use {"Mofiqul/dracula.nvim"}
+    use {"ThePrimeagen/vim-be-good"}
 
     -- Telescope
 	use {
@@ -44,8 +46,14 @@ return require('packer').startup(function(use)
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
+		"hrsh7th/nvim-cmp",     -- Required
+		"hrsh7th/cmp-nvim-lsp", -- Required
+		"L3MON4D3/LuaSnip",     -- Required
+        "saadparwaiz1/cmp_luasnip",
+        "rafamadriz/friendly-snippets",
+        "vhda/verilog_systemverilog.vim",
     }
-    use {'luk400/vim-jukit'}
+    -- use {'luk400/vim-jukit'}
 	-- use {
 	-- 	'VonHeikemen/lsp-zero.nvim',
 	-- 	branch = 'v2.x',
@@ -65,11 +73,11 @@ return require('packer').startup(function(use)
 	-- 	{'hrsh7th/cmp-nvim-lsp'}, -- Required
 	-- 	{'L3MON4D3/LuaSnip'},     -- Required
 	-- }}
-    use {
-        "startup-nvim/startup.nvim",
-        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-        config = function()
-            require"startup".setup()
-        end
-    }
+    -- use {
+    --     "startup-nvim/startup.nvim",
+    --     requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    --     config = function()
+    --         require"startup".setup()
+    --     end
+    -- }
 end)
