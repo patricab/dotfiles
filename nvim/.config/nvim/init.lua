@@ -43,3 +43,4 @@ vim.opt.textwidth = 72
 
 -- Verilog formatting
 vim.cmd("autocmd FileType verilog setlocal commentstring=//\\ %s")
+vim.cmd("autocmd FileType systemverilog setlocal commentstring=//\\ %s")

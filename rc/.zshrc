@@ -181,7 +181,7 @@ alias readme='npx readme-md-generator'
 alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
 alias pacman='sudo pacman'
 alias nv="nvim"
-alias oss-cad='source ~/Documents/oss-cad-suite/environment'
+alias oss-cad='source ~/tools/oss-cad-suite/environment'
 
 # PATHs
 export PATH=$PATH:/usr/local/go/bin
