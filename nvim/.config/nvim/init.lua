@@ -31,7 +31,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 vim.cmd[[colorscheme dracula]]
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 0
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
