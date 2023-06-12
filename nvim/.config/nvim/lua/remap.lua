@@ -30,14 +30,14 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
--- vim.keymap.set("n", "<M-j>", "}zz")
--- vim.keymap.set("n", "<M-k>", "{zz")
+vim.keymap.set("n", "<C-j>", "}zz")
+vim.keymap.set("n", "<C-k>", "{zz")
 
 -- Windows
 vim.keymap.set("n", "<C-h>", "<C-w>h") -- Move between splits
 vim.keymap.set("n", "<C-l>", "<C-w>l")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
+-- vim.keymap.set("n", "<C-j>", "<C-w>j")
+-- vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<leader>wm", "<C-w>|") -- Maximize window
 vim.keymap.set("n", "<leader>we", "<C-w>=") -- Equalize windows
 vim.keymap.set("n", "<leader>wc", "<C-w>o") -- Close all but window

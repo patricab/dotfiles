@@ -11,7 +11,15 @@ return require('packer').startup(function(use)
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	use {'nvim-treesitter/playground'}
 
+    -- My boy
+    use {"theprimeagen/vim-be-good"}
 	use {"theprimeagen/harpoon"}
+    use {"theprimeagen/refactoring.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-treesitter/nvim-treesitter"}
+        }
+    }
 
 	use {"mbbill/undotree"}
 
@@ -19,7 +27,6 @@ return require('packer').startup(function(use)
 
 	use {"nvim-lualine/lualine.nvim"}
     use {"Mofiqul/dracula.nvim"}
-    use {"ThePrimeagen/vim-be-good"}
 
     -- Telescope
 	use {
@@ -37,11 +44,15 @@ return require('packer').startup(function(use)
         config = function()
         require("nvim-surround").setup()
     end}
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
 	use {"terrortylor/nvim-comment"}
 	require('nvim_comment').setup()
 
-	--LSP
+	-- LSP/CMP
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",

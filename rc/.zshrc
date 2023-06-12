@@ -200,3 +200,5 @@ export EDITOR=/usr/bin/nvim
 #export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 bindkey '^[^M' autosuggest-execute
 bindkey '^[^J' autosuggest-execute
+
+if [ -e /home/patricab/.nix-profile/etc/profile.d/nix.sh ]; then . /home/patricab/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
