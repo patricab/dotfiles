@@ -181,6 +181,7 @@ alias readme='npx readme-md-generator'
 alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
 alias pacman='sudo pacman'
 alias nv="nvim"
+alias docker="sudo docker"
 alias oss-cad='source ~/tools/oss-cad-suite/environment'
 
 # PATHs

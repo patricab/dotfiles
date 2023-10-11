@@ -3,3 +3,5 @@
 	name = patricab
 [core]
 	editor = nvim
+[alias]
+    ls="ls-tree --full-tree --name-only -r HEAD"

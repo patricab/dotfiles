@@ -11,6 +11,7 @@ vim.g.loaded_netrwPlugin = 1
 -- Settings
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.opt.splitright = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
