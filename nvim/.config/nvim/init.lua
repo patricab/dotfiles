@@ -39,8 +39,8 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- HMID formatting
-vim.opt.colorcolumn = "72"
-vim.opt.textwidth = 72
+-- vim.opt.colorcolumn = "72"
+-- vim.opt.textwidth = 72
 
 -- Verilog formatting
 vim.cmd("autocmd FileType verilog setlocal commentstring=//\\ %s")
