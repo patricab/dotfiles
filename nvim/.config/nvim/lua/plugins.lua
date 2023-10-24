@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
     end}
-    use {"nvim-tree/nvim-tree.lua"}
+    -- use {"nvim-tree/nvim-tree.lua"}
 	use {"kylechui/nvim-surround", 
         tag = "*", 
         config = function()
