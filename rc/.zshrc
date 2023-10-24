@@ -115,74 +115,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-## User functions
-# Git shell: hotfix for ssh key errors on WSL. 
-# Arg: ssh _id_ file path
-unalias gsh
-gsh() {
-	eval $(ssh-agent -s)
-	ssh-add ~/.ssh/$1
-}
-
-# Git fetch: fetch updates for specific branch
-# Arg: target branch
-unalias gf
-gf() {
-	git fetch origin $1:$1
-}
-
-rec() {
-	asciinema rec $1
-	asciicast2gif -t solarized-dark $1 $1.gif
-}
-
-cls() { 
-	local HISTSIZE=0;
-	clear
-}
 
 # Random aliases
-alias popd='popd -n'
-alias term='i3-sensible-terminal'
-alias python='python3.7'
-alias update='sudo pacman -Syu --noconfirm && yay -Syu --noconfirm'
-alias activate='source env/bin/activate'
-#alias gc='google-chrome --force-device-scale-factor=1.4'
-alias ltc='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
-alias gcn='google-chrome --incognito --force-device-scale-factor=1.4'
-alias ds='dirs -v' 
-alias gl='git ls-tree -r master --name-only'
-alias gu='git remote update origin --prune'
-alias spec='screenfetch'
-alias ga='git add -u'
-alias gaa='git add --all'
-alias gps='git push && git push --tags'
-alias gp='git pull'
-alias gs='git status -uno'
-alias gc='git checkout'
-alias gb='git branch'
-alias gu='git remote update origin --prune'
-alias gpu='git push -u origin $(git rev-parse --abbrev-ref HEAD) && git push --tags'
-alias gsp='git pull --recurse-submodules'
-alias gsc='git clone --recurse-submodules'
-alias gsi='git submodule update --init'
-alias gst='git stash'
-alias gr='git reset'
-alias ggu='git remote get-url origin'
-alias vivado='/home/pab/Documents/Vivado/2020.1/bin/vivado'
-alias vpnc='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no'
-alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
-alias readme='npx readme-md-generator'
-alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
-alias pacman='sudo pacman'
-alias nv="nvim"
-alias docker="sudo docker"
-alias oss-cad='source ~/tools/oss-cad-suite/environment'
+if [ -f ~/.alias ]; then
+    . ~/.alias
+fi
 
 # PATHs
 export PATH=$PATH:/usr/local/go/bin

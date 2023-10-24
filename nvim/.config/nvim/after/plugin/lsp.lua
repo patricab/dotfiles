@@ -1,8 +1,9 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
-        "lua_ls"
-    }
+        "lua_ls",
+        "pylsp"
+    },
 })
 
 local on_attach = function(_,bufnr)

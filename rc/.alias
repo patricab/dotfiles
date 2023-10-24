@@ -1,0 +1,58 @@
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Function to add key to SSH agent
+# unalias gsh
+# gsh() {
+# 	eval $(ssh-agent -s)
+# 	ssh-add ~/.ssh/$1
+# }
+# unalias gf
+# gf() {
+# 	git fetch origin $1:$1
+# }
+# rec() {
+# 	asciinema rec $1
+# 	asciicast2gif -t solarized-dark $1 $1.gif
+# }
+# cls() { 
+# 	local HISTSIZE=0;
+# 	clear
+# }
+
+alias popd='popd -n'
+alias term='i3-sensible-terminal'
+alias aptu='sudo apt -y update --allow-unauthenticated; sudo apt -y upgrade --allow-unauthenticated'
+alias pacu='sudo pacman -Syu --noconfirm && yay -Syu --noconfirm'
+alias activate='source env/bin/activate'
+alias cls='history -c && history -w; clear'
+alias ds='dirs -v' 
+alias spec='screenfetch'
+alias vpnc='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no'
+alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
+alias readme='npx readme-md-generator'
+alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
+alias nv="nvim"
+alias docker="sudo docker"
+alias oss-cad='source ~/tools/oss-cad-suite/environment'
+
+# Git aliases
+alias gl="git ls-tree -r master --name-only"
+alias gu="git remote update origin --prune"
+alias ga="git add -u"
+alias gaa="git add --all"
+alias gps="git push && git push --tags"
+alias gpu="git push -u origin $(git rev-parse --abbrev-ref HEAD) && git push --tags"
+alias gp="git pull"
+alias gs="git status"
+alias gc="git checkout"
+alias gb="git branch"
+alias gu="git remote update origin --prune"
+alias gsp="git pull --recurse-submodules"
+alias gsc="git clone --recurse-submodules"
+alias gsi="git submodule update --init --recursive"
+alias gst="git stash"
+alias ggu="git remote get-url origin"
+alias gr="git reset"
+alias gw="git worktree"

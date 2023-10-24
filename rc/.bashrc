@@ -87,11 +87,6 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -101,9 +96,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -118,47 +110,12 @@ fi
 
 #####
 shopt -s extglob # Enable exclution wildcards
-# Function to add key to SSH agent
-gsh() {
-	eval $(ssh-agent -s)
-	ssh-add $1
-}
 
 PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] "
-alias popd='popd -n'
-alias term='i3-sensible-terminal'
-alias update='sudo apt -y update --allow-unauthenticated; sudo apt -y upgrade --allow-unauthenticated'
-alias activate='source env/bin/activate'
-#alias gc='google-chrome --force-device-scale-factor=1.4'
-alias ltc='wine ~/.wine/drive_c/Program\ Files/LTC/LTspiceXVII/XVIIx64.exe'
-alias gcn='google-chrome --incognito --force-device-scale-factor=1.4'
-alias cls='history -c && history -w; clear'
-alias ds='dirs -v' 
-alias gl='git ls-tree -r master --name-only'
-alias gu='git remote update origin --prune'
-alias spec='screenfetch'
-alias ga='git add -u'
-alias gaa='git add --all'
-alias gps='git push && git push --tags'
-alias gpu='git push -u origin $(git rev-parse --abbrev-ref HEAD) && git push --tags'
-alias gp='git pull'
-alias gs='git status'
-alias gc='git checkout'
-alias gb='git branch'
-alias gu='git remote update origin --prune'
-alias gsp='git pull --recurse-submodules'
-alias gsc='git clone --recurse-submodules'
-alias gsi='git submodule update --init'
-alias gst='git stash'
-alias ggu='git remote get-url origin'
-alias gr='git reset'
-alias vpnc='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no'
-alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
-alias readme='npx readme-md-generator'
-alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
-alias nv="nvim"
-alias docker="sudo docker"
-alias oss-cad='source ~/tools/oss-cad-suite/environment'
+
+if [ -f ~/.alias ]; then
+    . ~/.alias
+fi
 
 # Path
 export vrc=$HOME/.vimrc
@@ -170,4 +127,4 @@ export PATH=$PATH:/usr/local/go/bin
 
 #curl parrot.live
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash

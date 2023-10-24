@@ -14,17 +14,15 @@ return require('packer').startup(function(use)
     -- My boy
     use {"theprimeagen/vim-be-good"}
 	use {"theprimeagen/harpoon"}
+	use {"theprimeagen/git-worktree.nvim"}
     use {"theprimeagen/refactoring.nvim",
         requires = {
             {"nvim-lua/plenary.nvim"},
             {"nvim-treesitter/nvim-treesitter"}
         }
     }
-
 	use {"mbbill/undotree"}
-
 	use {"tpope/vim-fugitive"}
-
 	use {"nvim-lualine/lualine.nvim"}
     use {"Mofiqul/dracula.nvim"}
 
@@ -34,6 +32,8 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
+    use {"nvim-lua/popup.nvim"}
+    use {"nvim-telescope/telescope-fzy-native.nvim"}
 
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
