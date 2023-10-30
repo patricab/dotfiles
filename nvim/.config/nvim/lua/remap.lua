@@ -8,6 +8,7 @@ vim.keymap.set("n", "<leader>s", ":so | PackerSync<CR>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<leader><tab>", ":e#<CR>") -- Jump to previous file
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- Jump to previous file
+vim.keymap.set("n", "<leader>gp", ":Git push<CR>")
 
 -- Text processing
 vim.keymap.set("n", "Y", "Vy")
