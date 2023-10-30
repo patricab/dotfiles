@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
           requires = "nvim-treesitter/nvim-treesitter",
     })
 	use {'nvim-treesitter/playground'}
+    use {"nvim-treesitter/nvim-treesitter-context"}
 
     -- My boy
     use {"theprimeagen/vim-be-good"}

@@ -34,6 +34,9 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<C-j>", "}")
 vim.keymap.set("n", "<C-k>", "{")
+vim.keymap.set("n", "[c", function()
+  require("treesitter-context").go_to_context()
+end, { silent = true })
 
 -- Windows
 vim.keymap.set("n", "<C-h>", "<C-w>h") -- Move between splits
