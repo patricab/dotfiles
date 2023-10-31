@@ -7,8 +7,9 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
-    
+
     use "christoomey/vim-tmux-navigator"
+    use "airblade/vim-gitgutter"
 
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use({
