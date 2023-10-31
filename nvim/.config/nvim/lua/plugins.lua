@@ -7,6 +7,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
+    
+    use "christoomey/vim-tmux-navigator"
 
 	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use({
@@ -41,9 +43,9 @@ return require('packer').startup(function(use)
     use {"nvim-lua/popup.nvim"}
     use {"nvim-telescope/telescope-fzy-native.nvim"}
 
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-        require("toggleterm").setup()
-    end}
+    -- use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    --     require("toggleterm").setup()
+    -- end}
     -- use {"nvim-tree/nvim-tree.lua"}
 	use {"kylechui/nvim-surround", 
         tag = "*", 

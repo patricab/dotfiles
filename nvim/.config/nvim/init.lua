@@ -38,6 +38,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
+
 -- HMID formatting
 -- vim.opt.colorcolumn = "72"
 -- vim.opt.textwidth = 72
