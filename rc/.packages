@@ -34,3 +34,4 @@ nixpkgs.dropbox
 nixpkgs.slack
 nixpkgs.oh-my-zsh
 nixpkgs.tldr
+nixpkgs.lazygit
