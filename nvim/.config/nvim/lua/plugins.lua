@@ -1,23 +1,23 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+-- This file can be loaded by calling `lua require("plugins")` from your init.vim
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 
-return require('packer').startup(function(use)
+return require("packer").startup(function(use)
 	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+	use "wbthomason/packer.nvim"
 
     use "christoomey/vim-tmux-navigator"
     use "airblade/vim-gitgutter"
 
-	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+	use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use({
           "nvim-treesitter/nvim-treesitter-textobjects",
           after = "nvim-treesitter",
           requires = "nvim-treesitter/nvim-treesitter",
     })
-	use {'nvim-treesitter/playground'}
+	use {"nvim-treesitter/playground"}
     use {"nvim-treesitter/nvim-treesitter-context"}
 
     -- My boy
@@ -37,14 +37,14 @@ return require('packer').startup(function(use)
 
     -- Telescope
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		"nvim-telescope/telescope.nvim", tag = "0.1.1",
+		-- or                            , branch = "0.1.x",
+		requires = { {"nvim-lua/plenary.nvim"} }
 	}
     use {"nvim-lua/popup.nvim"}
     use {"nvim-telescope/telescope-fzy-native.nvim"}
 
-    -- use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    -- use {"akinsho/toggleterm.nvim", tag = "*", config = function()
     --     require("toggleterm").setup()
     -- end}
     -- use {"nvim-tree/nvim-tree.lua"}
@@ -59,7 +59,7 @@ return require('packer').startup(function(use)
     }
 
 	use {"terrortylor/nvim-comment"}
-	require('nvim_comment').setup()
+	require("nvim_comment").setup()
 
 	-- LSP/CMP
     use {
@@ -73,25 +73,24 @@ return require('packer').startup(function(use)
         "rafamadriz/friendly-snippets",
         "vhda/verilog_systemverilog.vim",
     }
-    -- use {'luk400/vim-jukit'}
 	-- use {
-	-- 	'VonHeikemen/lsp-zero.nvim',
-	-- 	branch = 'v2.x',
+	-- 	"VonHeikemen/lsp-zero.nvim",
+	-- 	branch = "v2.x",
 	-- 	requires = {
 	-- 		-- LSP Support
-	-- 		{'neovim/nvim-lspconfig'},             -- Required
+	-- 		{"neovim/nvim-lspconfig"},             -- Required
 	-- 		{                                      -- Optional
-	-- 		'williamboman/mason.nvim',
+	-- 		"williamboman/mason.nvim",
 	-- 		run = function()
-	-- 			pcall(vim.cmd, 'MasonUpdate')
+	-- 			pcall(vim.cmd, "MasonUpdate")
 	-- 		end,
 	-- 	},
-	-- 	{'williamboman/mason-lspconfig.nvim'}, -- Optional
+	-- 	{"williamboman/mason-lspconfig.nvim"}, -- Optional
 
 	-- 	-- Autocompletion
-	-- 	{'hrsh7th/nvim-cmp'},     -- Required
-	-- 	{'hrsh7th/cmp-nvim-lsp'}, -- Required
-	-- 	{'L3MON4D3/LuaSnip'},     -- Required
+	-- 	{"hrsh7th/nvim-cmp"},     -- Required
+	-- 	{"hrsh7th/cmp-nvim-lsp"}, -- Required
+	-- 	{"L3MON4D3/LuaSnip"},     -- Required
 	-- }}
     -- use {
     --     "startup-nvim/startup.nvim",
@@ -100,4 +99,5 @@ return require('packer').startup(function(use)
     --         require"startup".setup()
     --     end
     -- }
+  use "kdheepak/lazygit.nvim"
 end)
