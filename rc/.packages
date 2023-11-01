@@ -35,3 +35,5 @@ nixpkgs.slack
 nixpkgs.oh-my-zsh
 nixpkgs.tldr
 nixpkgs.lazygit
+nixpkgs.autojump
+nixpkgs.keepassxc
