@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 -- Utils
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "W", ":w<CR>")
-vim.keymap.set("n", "<leader>q", ":so<CR>")
+vim.keymap.set("n", "<leader>q", ":so ~/.config/nvim/init.lua<CR>")
 vim.keymap.set("n", "<leader>s", ":so ~/.config/nvim/lua/plugins.lua  | PackerSync<CR>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<leader><tab>", ":e#<CR>") -- Jump to previous file
@@ -29,13 +29,13 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Movement
-vim.keymap.set("n", "J", "mzJ`z")
+-- vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<M-j>", "}")
-vim.keymap.set("n", "<M-k>", "{")
+vim.keymap.set("n", "J", "}")
+vim.keymap.set("n", "K", "{")
 vim.keymap.set("n", "[c", function()
   require("treesitter-context").go_to_context()
 end, { silent = true })

@@ -72,25 +72,22 @@ return require("packer").startup(function(use)
         "rafamadriz/friendly-snippets",
         "vhda/verilog_systemverilog.vim",
     }
-	-- use {
-	-- 	"VonHeikemen/lsp-zero.nvim",
-	-- 	branch = "v2.x",
-	-- 	requires = {
-	-- 		-- LSP Support
-	-- 		{"neovim/nvim-lspconfig"},             -- Required
-	-- 		{                                      -- Optional
-	-- 		"williamboman/mason.nvim",
-	-- 		run = function()
-	-- 			pcall(vim.cmd, "MasonUpdate")
-	-- 		end,
-	-- 	},
-	-- 	{"williamboman/mason-lspconfig.nvim"}, -- Optional
+    use {
+        "VonHeikemen/lsp-zero.nvim",
+        branch = 'v3.x',
+        requires = {
+            --- Uncomment these if you want to manage LSP servers from neovim
+            -- {'williamboman/mason.nvim'},
+            -- {'williamboman/mason-lspconfig.nvim'},
 
-	-- 	-- Autocompletion
-	-- 	{"hrsh7th/nvim-cmp"},     -- Required
-	-- 	{"hrsh7th/cmp-nvim-lsp"}, -- Required
-	-- 	{"L3MON4D3/LuaSnip"},     -- Required
-	-- }}
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'L3MON4D3/LuaSnip'},
+        }
+    }
     -- use {
     --     "startup-nvim/startup.nvim",
     --     requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
