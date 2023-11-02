@@ -4,6 +4,7 @@ clear
 # TODO: bootstrap this script
 #
 # Installing packages, update system
+sh <(curl -L https://nixos.org/nix/install)
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
 
@@ -11,6 +12,10 @@ source .install_pkg.sh
 
 # Vim plugins
 #nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
+# Install packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # Git setup
 # git config --global core.editor vim
