@@ -21,6 +21,9 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.tmux/tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "p", [["0p]])
+vim.keymap.set("n", "P", [["0P]])
+
 -- Refactor hover
 vim.keymap.set("n", "<leader>f", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
@@ -50,7 +53,5 @@ vim.keymap.set("n", "<leader>we", "<C-w>=") -- Equalize windows
 -- vim.keymap.set("n", "<leader>wc", "<C-w>o") -- Close all but window
 vim.keymap.set("n", "<leader>w/", ":vsp %<CR><C-w>l") -- Vsplit current split
 
--- vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
--- vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
--- vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+vim.keymap.set("n", "<M-j>", ":GitGutterNextHunk<CR>") -- Vsplit current split
+vim.keymap.set("n", "<M-k>", ":GitGutterPrevHunk<CR>") -- Vsplit current split
