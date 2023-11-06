@@ -8,12 +8,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+[ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
-#. /usr/share/autojump/autojump.sh
  
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #source ~/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -128,6 +129,7 @@ export PATH=/usr/local/lib/nodejs/node-v16.13.2-linux-x64/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:$ZSH
+export PATH=$PATH:~/.nix-profile/bin
 #export PATH=/home/pab/Documents/Unity/auto:$PATH
 #export GOPATH=/home/pab/.go
 #source /usr/share/doc/fzf/examples/key-bindings.zsh
@@ -140,4 +142,3 @@ bindkey '^[^M' autosuggest-execute
 bindkey '^[^J' autosuggest-execute
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
-if [ -e /home/patricab/.nix-profile/etc/profile.d/nix.sh ]; then . /home/patricab/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

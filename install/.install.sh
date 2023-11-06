@@ -4,10 +4,7 @@ clear
 # TODO: bootstrap this script
 #
 # Installing packages, update system
-sh <(curl -L https://nixos.org/nix/install)
-nix-channel --add https://nixos.org/channels/nixpkgs-unstable
-nix-channel --update
-
+source .install_nix.sh
 source .install_pkg.sh
 
 # Vim plugins
