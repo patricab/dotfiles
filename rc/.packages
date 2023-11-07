@@ -37,3 +37,4 @@ nixpkgs.tldr
 nixpkgs.lazygit
 nixpkgs.autojump
 nixpkgs.keepassxc
+nixpkgs.nodejs
