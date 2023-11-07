@@ -28,15 +28,16 @@ alias pacu='sudo pacman -Syu --noconfirm && yay -Syu --noconfirm'
 alias activate='source env/bin/activate'
 # alias cls='history -c && history -w; clear'
 alias cls="clear"
-alias ds='dirs -v' 
-alias spec='screenfetch'
-alias vpnc='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no'
-alias vpnd='/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect'
-alias readme='npx readme-md-generator'
-alias gh-project='cookiecutter gh:dec0dOS/amazing-github-template'
+alias ds="dirs -v" 
+alias spec="screenfetch"
+alias vpnc="/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn connect vpn.ntnu.no"
+alias vpnd="/home/pab/Documents/anyconnect-linux64-4.8.01090/vpn/vpn disconnect"
+alias readme="npx readme-md-generator"
+alias gh-project="cookiecutter gh:dec0dOS/amazing-github-template"
 alias nv="nvim"
 alias docker="sudo docker"
-alias oss-cad='source ~/tools/oss-cad-suite/environment'
+alias oss-cad="source ~/tools/oss-cad-suite/environment"
+alias lg="lazygit"
 
 # Git aliases
 alias gl="git ls-tree -r master --name-only"

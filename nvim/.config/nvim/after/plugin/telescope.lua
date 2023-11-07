@@ -2,7 +2,7 @@ local builtin = require('telescope.builtin')
 require("telescope").load_extension("git_worktree")
 
 vim.keymap.set('n', "<leader>ff", builtin.find_files, {})
--- vim.keymap.set('n', "<leader>fg", builtin.live_grep, {})
+vim.keymap.set('n', "<leader>fg", builtin.live_grep, {})
 vim.keymap.set('n', "<leader>fo", builtin.oldfiles, {})
 vim.keymap.set('n', "<leader>fk", builtin.keymaps, {})
 vim.keymap.set('n', "<leader>fb", builtin.current_buffer_fuzzy_find, {})
@@ -22,3 +22,10 @@ end)
 vim.keymap.set('n', '<leader>wf', function()
     require('telescope').extensions.git_worktree.git_worktrees()
 end)
+
+-- load refactoring Telescope extension
+require("telescope").load_extension("refactoring")
+
+vim.keymap.set(
+ {"n", "x"},"<leader>rr",function() require('telescope').extensions.refactoring.refactors() end
+)
