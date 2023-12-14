@@ -38,3 +38,4 @@ nixpkgs.lazygit
 nixpkgs.autojump
 nixpkgs.keepassxc
 nixpkgs.nodejs
+nixpkgs.rustup

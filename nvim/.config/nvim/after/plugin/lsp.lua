@@ -20,6 +20,7 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         -- "pylsp",
         "pyright",
+        "rust_analyzer",
     },
     handlers = {
         lsp_zero.default_setup,
@@ -39,6 +40,7 @@ cmp.setup({
         {name = "nvim_lsp"},
         {name = "nvim_lua"},
         {name = "pylsp"},
+        {name = "rust_analyzer"},
     },
     formatting = lsp_zero.cmp_format(),
     mapping = cmp.mapping.preset.insert({
@@ -47,4 +49,17 @@ cmp.setup({
         ["<C-Space>"] = cmp.mapping.confirm({ select = true }),
         -- [""] = cmp.mapping.complete(),
     }),
+})
+
+local rt = require("rust-tools")
+
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+  },
 })

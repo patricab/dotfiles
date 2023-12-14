@@ -12,10 +12,11 @@ require'nvim-treesitter.configs'.setup {
         "dockerfile",
         "doxygen",
         "make",
+        "rust",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
+    sync_install = true,
 
     auto_install = true,
 
@@ -63,8 +64,8 @@ require'nvim-treesitter.configs'.setup {
                 ["af"] = { query = "@call.outer", desc = "Select outer part of a function call" },
                 ["if"] = { query = "@call.inner", desc = "Select inner part of a function call" },
 
-                ["ad"] = { query = "@function.outer", desc = "Select outer part of a method/function definition" },
-                ["id"] = { query = "@function.inner", desc = "Select inner part of a method/function definition" },
+                ["am"] = { query = "@function.outer", desc = "Select outer part of a method/function definition" },
+                ["im"] = { query = "@function.inner", desc = "Select inner part of a method/function definition" },
 
                 -- ["ac"] = { query = "@class.outer", desc = "Select outer part of a class" },
                 -- ["ic"] = { query = "@class.inner", desc = "Select inner part of a class" },

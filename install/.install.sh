@@ -30,3 +30,6 @@ git config credential.helper cache # Make sure I don't have to type in my passwo
 # Github
 gh auth login
 gh config set editor "nvim"
+
+# Rust
+rustup default stable

@@ -95,5 +95,6 @@ return require("packer").startup(function(use)
     --         require"startup".setup()
     --     end
     -- }
-  use "kdheepak/lazygit.nvim"
+    use "kdheepak/lazygit.nvim"
+    use "simrat39/rust-tools.nvim"
 end)
