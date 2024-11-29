@@ -38,6 +38,7 @@ alias nv="nvim"
 alias docker="sudo docker"
 alias oss-cad="source ~/tools/oss-cad-suite/environment"
 alias lg="lazygit"
+alias tsync="sudo sntp -sS  time.nist.gov"
 
 # Git aliases
 alias gl="git ls-tree -r master --name-only"
@@ -59,3 +60,4 @@ alias ggu="git remote get-url origin"
 alias gr="git reset"
 alias gw="git worktree"
 alias gwc="git clone --bare"
+alias ta="tmux attach"

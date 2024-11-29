@@ -12,6 +12,7 @@ vim.cmd[[colorscheme dracula]]
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.splitright = true
+vim.cmd("set viminfo='1000,f1") -- Remeber uppercase marks
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

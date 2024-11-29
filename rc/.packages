@@ -39,3 +39,4 @@ nixpkgs.autojump
 nixpkgs.keepassxc
 nixpkgs.nodejs
 nixpkgs.rustup
+nixpkgs.wget
