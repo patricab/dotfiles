@@ -40,3 +40,6 @@ nixpkgs.keepassxc
 nixpkgs.nodejs
 nixpkgs.rustup
 nixpkgs.wget
+nixpkgs.python311Packages.pypdf
+nixpkgs.telnet
+nixpkgs.dialog
