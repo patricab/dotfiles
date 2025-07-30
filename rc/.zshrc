@@ -136,7 +136,7 @@ export PATH=$PATH:~/.nix-profile/bin
 #source /usr/share/doc/fzf/examples/completion.zsh
 
 # Configs
-export EDITOR=/usr/bin/nvim
+export EDITOR=/nix/var/nix/profiles/default/bin/nvim
 #export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 bindkey '^[^M' autosuggest-execute
 bindkey '^[^J' autosuggest-execute

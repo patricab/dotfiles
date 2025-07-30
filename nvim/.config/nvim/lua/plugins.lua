@@ -11,18 +11,23 @@ return require("packer").startup(function(use)
     use "christoomey/vim-tmux-navigator"
     use "airblade/vim-gitgutter"
 
-	use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-    use({
-          "nvim-treesitter/nvim-treesitter-textobjects",
-          after = "nvim-treesitter",
-          requires = "nvim-treesitter/nvim-treesitter",
-    })
-	use {"nvim-treesitter/playground"}
-    use {"nvim-treesitter/nvim-treesitter-context"}
+	-- use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+	--     use({
+	--           "nvim-treesitter/nvim-treesitter-textobjects",
+	--           after = "nvim-treesitter",
+	--           requires = "nvim-treesitter/nvim-treesitter",
+	--     })
+	--     use {"nvim-treesitter/playground"}
+	--     use {"nvim-treesitter/nvim-treesitter-context"}
 
     -- My boy
     use {"theprimeagen/vim-be-good"}
-	use {"theprimeagen/harpoon"}
+    use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
 	use {"theprimeagen/git-worktree.nvim"}
     use {"theprimeagen/refactoring.nvim",
         requires = {
@@ -97,4 +102,5 @@ return require("packer").startup(function(use)
     -- }
     use "kdheepak/lazygit.nvim"
     use "simrat39/rust-tools.nvim"
+	use "proxychains-ng"
 end)

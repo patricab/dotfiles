@@ -7,6 +7,8 @@ clear
 source .install_nix.sh
 source .install_pkg.sh
 
+# Symlink files
+stow .
 # Vim plugins
 #nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
