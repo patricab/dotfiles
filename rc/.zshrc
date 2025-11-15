@@ -130,8 +130,10 @@ export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export PATH=$PATH:$ZSH
 export PATH=$PATH:~/.nix-profile/bin
+export GOPATH=/Users/patricab/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$(go env GOPATH)/bin 
 #export PATH=/home/pab/Documents/Unity/auto:$PATH
-#export GOPATH=/home/pab/.go
 #source /usr/share/doc/fzf/examples/key-bindings.zsh
 #source /usr/share/doc/fzf/examples/completion.zsh
 
